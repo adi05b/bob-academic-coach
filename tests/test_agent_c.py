@@ -81,9 +81,9 @@ class ResumeTests(unittest.TestCase):
         self.assertEqual(set(explicit["skills"]), {"Go", "R"})
 
     def test_unknown_explicit_skills_are_preserved(self):
-        candidate = parse_resume_text("Skills: Elixir, Apache Spark, PostgreSQL")
+        candidate = parse_resume_text("Skills: Elixir, Apache Beam, PostgreSQL")
         self.assertIn("Elixir", candidate["skills"])
-        self.assertIn("Apache Spark", candidate["skills"])
+        self.assertIn("Apache Beam", candidate["skills"])
 
     def test_negated_and_learning_skills_are_not_qualifications(self):
         candidate = parse_resume_text("Skills: Python\nProjects\nNo experience with Java or Rust.\nLearning Kubernetes.")
@@ -238,6 +238,19 @@ class OutreachTests(unittest.TestCase):
                 for claim in result["claims"]:
                     if claim["kind"] == "quoted_evidence":
                         self.assertIn(claim["text"].removesuffix(" ..."), claim["source_text"])
+
+    def test_character_budget_preserves_quotes_and_returns_accurate_count(self):
+        for budget in (200, 250, 299, 400):
+            with self.subTest(budget=budget):
+                result = generate_outreach(self.candidate, JOB, CONTACT, {"max_chars": budget, "evidence_count": 3})
+                self.assertEqual(result["char_count"], len(result["message"]))
+                self.assertLessEqual(result["char_count"], budget)
+                for claim in result["claims"]:
+                    if claim["kind"] == "quoted_evidence":
+                        self.assertIn(claim["text"].removesuffix(" ..."), claim["source_text"])
+        with self.assertRaises(CareerCoachError) as context:
+            generate_outreach(self.candidate, JOB, CONTACT, {"max_chars": 60})
+        self.assertEqual(context.exception.code, "length_budget_too_small")
 
     def test_string_callable_uses_identical_generator(self):
         self.assertEqual(generate_message(self.candidate, JOB, CONTACT), generate_outreach(self.candidate, JOB, CONTACT)["message"])

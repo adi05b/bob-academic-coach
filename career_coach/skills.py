@@ -40,8 +40,8 @@ ALIASES = {
     "CI/CD": ("ci/cd", "continuous integration"),
     "Machine Learning": ("machine learning", "ml"),
     "Deep Learning": ("deep learning",),
-    "PyTorch": ("pytorch",),
-    "TensorFlow": ("tensorflow",),
+    "PyTorch": ("pytorch", "torch-based models"),
+    "TensorFlow": ("tensorflow", "tf pipelines"),
     "scikit-learn": ("scikit-learn", "sklearn"),
     "pandas": ("pandas",),
     "NumPy": ("numpy",),
@@ -52,9 +52,21 @@ ALIASES = {
     "Figma": ("figma",),
     "Data Analysis": ("data analysis", "data analytics"),
     "Data Visualization": ("data visualization",),
-    "Statistics": ("statistics", "statistical analysis"),
+    "Statistics": ("statistics", "stats", "statistical analysis", "statistical modeling", "bayesian inference", "probabilistic modeling"),
     "A/B Testing": ("a/b testing", "ab testing"),
-    "NLP": ("nlp", "natural language processing"),
+    "NLP": ("nlp", "natural language processing", "computational linguistics"),
+    "Computer Vision": ("cv", "computer vision", "image understanding", "visual recognition"),
+    "Reinforcement Learning": ("rl", "reinforcement learning", "rl agents", "sequential decision making"),
+    "Genomics": ("genomics", "genomic data analysis", "single-cell rna-seq", "high-throughput sequencing"),
+    "Neuroscience": ("neuro", "neuroscience", "computational neuroscience", "neural recording analysis", "neural data analysis"),
+    "Teaching": ("teaching", "mentored undergraduates", "led discussion sections", "teaching experience", "mentoring students"),
+    "Scientific Writing": ("scientific writing", "peer-reviewed publications", "journal articles", "strong publication record"),
+    "High Performance Computing": ("hpc", "high-performance computing", "cluster computing", "gpu clusters", "large-scale training"),
+    "Responsible AI": ("fairness", "algorithmic fairness", "bias auditing", "responsible ai", "fairness in ml"),
+    "Airflow": ("airflow",),
+    "Spark": ("spark", "apache spark"),
+    "LangChain": ("langchain",),
+    "GraphQL": ("graphql",),
     "REST APIs": ("rest api", "rest apis", "restful"),
     "Testing": ("unit testing", "automated testing", "pytest", "jest"),
     "Communication": ("communication",),
@@ -105,7 +117,7 @@ def mentioned_skills(text: str, *, explicit: bool = False) -> list[str]:
     for canonical, aliases in ALIASES.items():
         for alias in aliases:
             # Bare Go and R are too ambiguous outside a skills list.
-            if not explicit and alias in {"go", "r", "ts", "js"}:
+            if not explicit and alias in {"go", "r", "ts", "js", "cv", "rl"}:
                 continue
             match = re.search(alias_pattern(alias), text, re.I)
             if match:

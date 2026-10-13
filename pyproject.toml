@@ -11,9 +11,10 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=7.0"]
+career = ["pypdf>=6.0,<7"]
 
 [tool.setuptools.packages.find]
-include = ["data*", "agent_d*"]
+include = ["data*", "agent_d*", "career_coach*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests", "backend/tests"]

@@ -17,6 +17,7 @@ from .skills import compact, skill_in_text, skill_key, tokens
 @dataclass(frozen=True)
 class GenerationInstructions:
     max_words: int = 120
+    max_chars: int | None = None
     tone: str = "professional"
     opening: str = "role_first"
     evidence_count: int = 1
@@ -35,7 +36,7 @@ ENUMS = {
     "opening": {"role_first", "evidence_first"},
     "call_to_action": {"question", "conversation", "consideration"},
 }
-RANGES = {"max_words": (30, 250), "evidence_count": (0, 3), "skill_limit": (1, 6)}
+RANGES = {"max_words": (30, 250), "max_chars": (60, 2000), "evidence_count": (0, 3), "skill_limit": (1, 6)}
 BOOL_FIELDS = {"include_skills", "include_metrics", "personalize_contact", "adapt_to_contact", "include_subject"}
 
 
@@ -73,6 +74,9 @@ def parse_instructions(instructions=None) -> tuple[GenerationInstructions, list[
             budget = re.search(r"(?:under|at most|maximum|max)\s+(\d+)\s+words", prompt, re.I)
             if budget:
                 supplied["max_words"] = int(budget.group(1)) - (1 if prompt[budget.start():].lower().startswith("under") else 0)
+            char_budget = re.search(r"(?:under|at most|maximum|max)\s+(\d+)\s+(?:characters|chars)", prompt, re.I)
+            if char_budget:
+                supplied["max_chars"] = int(char_budget.group(1)) - (1 if prompt[char_budget.start():].lower().startswith("under") else 0)
             if re.search(r"\b(?:two|2) (?:examples|facts|evidence|achievements)\b", prompt, re.I):
                 supplied["evidence_count"] = 2
             if re.search(r"\b(?:three|3) (?:examples|facts|evidence|achievements)\b", prompt, re.I):
@@ -96,7 +100,7 @@ def parse_instructions(instructions=None) -> tuple[GenerationInstructions, list[
                 key, value = match.groups()
                 key, value = key.lower(), value.lower()
                 if key in RANGES:
-                    supplied[key] = int(value) if value.isdigit() else value
+                    supplied[key] = int(value) if value.isdigit() else (None if key == "max_chars" and value == "none" else value)
                 elif key in BOOL_FIELDS:
                     supplied[key] = {"true": True, "false": False}.get(value, value)
                 else:
@@ -112,6 +116,8 @@ def parse_instructions(instructions=None) -> tuple[GenerationInstructions, list[
         if key in ENUMS and (not isinstance(value, str) or value not in ENUMS[key]):
             raise CareerCoachError("invalid_instructions", f"{key} must be one of {sorted(ENUMS[key])}.")
         if key in RANGES:
+            if key == "max_chars" and value is None:
+                continue
             low, high = RANGES[key]
             if not isinstance(value, int) or isinstance(value, bool) or not low <= value <= high:
                 raise CareerCoachError("invalid_instructions", f"{key} must be an integer from {low} to {high}.")
@@ -178,6 +184,17 @@ def _quote_prefix(text: str, max_words: int) -> str:
     return text[:words[max_words - 1].end()].rstrip() + " ..."
 
 
+def _fit_quote(text: str, max_words: int, max_chars: int | None) -> str:
+    quote = _quote_prefix(text, max_words)
+    if max_chars is None or len(quote) <= max_chars:
+        return quote
+    for budget in range(max_words - 1, 2, -1):
+        quote = _quote_prefix(text, budget)
+        if len(quote) <= max_chars:
+            return quote
+    return ""
+
+
 def generate_outreach(candidate: dict, job: dict, contact: dict, instructions=None, *, target_role: str = "") -> dict:
     """Return a JSON-serializable note and the source for every candidate claim."""
     candidate = normalize_candidate(candidate)
@@ -211,6 +228,10 @@ def generate_outreach(candidate: dict, job: dict, contact: dict, instructions=No
     if fixed_words > options.max_words:
         raise CareerCoachError("word_budget_too_small", "The job/contact names and required message structure exceed the requested word budget. Increase max_words.")
     remaining = options.max_words - fixed_words
+    fixed_chars = len("\n\n".join((greeting, intro, cta, closing)))
+    if options.max_chars is not None and fixed_chars > options.max_chars:
+        raise CareerCoachError("length_budget_too_small", "The job/contact names and required message structure exceed the character budget. Increase max_chars.")
+    remaining_chars = options.max_chars - fixed_chars - 2 if options.max_chars is not None else None
     available_skills = candidate["skills"]
     relevance = {skill_key(skill): index for index, skill in enumerate(job["required_skills"] + job["preferred_skills"])}
     available_skills = sorted(available_skills, key=lambda skill: (relevance.get(skill_key(skill), 10_000), skill.casefold()))
@@ -227,8 +248,14 @@ def generate_outreach(candidate: dict, job: dict, contact: dict, instructions=No
         if quote_budget < 3:
             warnings.append("Some requested evidence was omitted to respect the word budget.")
             break
-        quote = _quote_prefix(fact["text"], quote_budget)
+        quote_char_budget = None if remaining_chars is None else remaining_chars // (len(selected_evidence) - index) - len(label) - 4 - bool(evidence_sentences)
+        quote = _fit_quote(fact["text"], quote_budget, quote_char_budget)
+        if not quote:
+            warnings.append("Some requested evidence was omitted to respect the character budget.")
+            continue
         sentence = f'{label}: "{quote}"'
+        if remaining_chars is not None:
+            remaining_chars -= len(sentence) + bool(evidence_sentences)
         evidence_sentences.append(sentence)
         remaining -= len(sentence.split())
         claims.append({"kind": "quoted_evidence", "text": quote, "fact_id": fact["id"],
@@ -241,6 +268,8 @@ def generate_outreach(candidate: dict, job: dict, contact: dict, instructions=No
             sentence = "My resume lists " if "raw_text" in candidate else "My profile lists "
             sentence += ", ".join(proposed) + "."
             if len(sentence.split()) > remaining:
+                break
+            if remaining_chars is not None and len(sentence) + bool(evidence_sentences) > remaining_chars:
                 break
             selected_skills = proposed
             skill_sentence = sentence
@@ -261,6 +290,7 @@ def generate_outreach(candidate: dict, job: dict, contact: dict, instructions=No
     message = "\n\n".join(part for part in [greeting, *middle, cta, closing] if part)
     word_count = len(message.split())
     assert word_count <= options.max_words, "Internal word-budget accounting error"
+    assert options.max_chars is None or len(message) <= options.max_chars, "Internal character-budget accounting error"
     # Every emitted fact is taken from our rebuilt candidate profile, never the prompt.
     for claim in claims:
         if claim["kind"] == "quoted_evidence":
@@ -269,7 +299,7 @@ def generate_outreach(candidate: dict, job: dict, contact: dict, instructions=No
     return {
         "schema_version": "1.0", "generator": "deterministic_grounded_v1",
         "subject": f"Interest in {job['title']} at {job['company']}" if options.include_subject else None,
-        "message": message, "word_count": word_count, "job_id": job["id"],
+        "message": message, "word_count": word_count, "char_count": len(message), "job_id": job["id"],
         "contact_id": contact.get("id", contact.get("contact_id")),
         "target_role": target_role, "effective_instructions": effective,
         "claims": claims, "used_fact_ids": list(dict.fromkeys(claim["fact_id"] for claim in claims)),

@@ -95,13 +95,21 @@ def _parse(text: str, source_name: str, page_spans: list[tuple[int, int, int]]) 
                 result["email"] = email.group()
         # A name remains a source-backed heuristic, never a fabricated default.
         if result["name"] is None and number <= 3 and heading is None:
-            if re.fullmatch(r"[^\W\d_][^\d@|,:;/\n]{1,70}", content, re.UNICODE) and 2 <= len(content.split()) <= 4:
-                if all(word[0].isupper() for word in content.split()) and not re.search(r"resume|engineer|developer|university|college|student", content, re.I):
-                    result["name"] = content
-                    result["facts"].append(make_fact("name", content, source.copy()))
-        if section in {"education", "experience", "projects"}:
-            fact = make_fact(section, content, source.copy())
-            result[section].append({"text": content, "evidence_id": fact["id"]})
+            possible_name = content.split(",", 1)[0].split("|", 1)[0].strip()
+            if re.fullmatch(r"[^\W\d_][^\d@|,:;/\n]{1,70}", possible_name, re.UNICODE) and 2 <= len(possible_name.split()) <= 4:
+                if all(word[0].isupper() for word in possible_name.split()) and not re.search(r"resume|engineer|developer|university|college|student|\b(?:B\.?S\.?|M\.?S\.?|Ph\.?D\.?)\b", possible_name, re.I):
+                    result["name"] = possible_name
+                    name_source = {**source, "end": source["start"] + len(possible_name)}
+                    result["facts"].append(make_fact("name", possible_name, name_source))
+        fact_kind = section
+        if fact_kind == "other" and heading is None:
+            if re.search(r"\b(?:B\.?S\.?|M\.?S\.?|Ph\.?D\.?|Bachelor|Master|Doctorate)\b", content, re.I):
+                fact_kind = "education"
+            elif re.search(r"^(?:built|developed|implemented|created|analyzed|designed|improved|led|tested|documented|experience with|research focus)\b|\b(?:intern|research assistant|teaching assistant)\b", content, re.I):
+                fact_kind = "experience"
+        if fact_kind in {"education", "experience", "projects"}:
+            fact = make_fact(fact_kind, content, source.copy())
+            result[fact_kind].append({"text": content, "evidence_id": fact["id"]})
             result["facts"].append(fact)
         skills = mentioned_skills(content, explicit=section == "skills")
         if section == "skills":

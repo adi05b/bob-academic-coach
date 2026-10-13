@@ -187,4 +187,9 @@ def normalize_candidate(candidate) -> dict:
         profile["id"] = text_field(candidate["id"], "candidate.id", required=True)
     if candidate.get("target_role") is not None:
         profile["target_role"] = text_field(candidate["target_role"], "candidate.target_role", max_length=1000)
+    if "skill_allowlist" in candidate:
+        allowed = {canonical_skill(skill).casefold() for skill in string_list(candidate["skill_allowlist"], "candidate.skill_allowlist")}
+        profile["skill_allowlist"] = sorted(allowed)
+        profile["skills"] = [skill for skill in profile["skills"] if skill.casefold() in allowed]
+        profile["skill_evidence"] = {skill: fact_id for skill, fact_id in profile["skill_evidence"].items() if skill.casefold() in allowed}
     return profile

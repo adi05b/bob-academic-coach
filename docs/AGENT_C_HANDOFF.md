@@ -1,10 +1,11 @@
 # Agent C handoff: resume, matching, and outreach
 
 Agent C owns `career_coach/`, `requirements-agent-c.txt`, `examples/agent_c/`, and
-`tests/test_agent_c.py`. This component is independent of a web framework and needs
-no model API key. No A/B/D implementation existed when this work began, so the
-interfaces below are a concrete provisional contract for the merge agent. The
-fixture is explicitly temporary and fictional; replace it with B's data.
+`tests/test_agent_c*.py`. This component is independent of a web framework and needs
+no model API key. The local checkout contained only briefs when work began;
+the branch was subsequently rebased onto shared `main`, and the adapters below
+were tested against its frozen backend models and B's actual dataset. The small
+standalone fixture remains explicitly temporary and fictional.
 
 ## Run and verify
 
@@ -22,6 +23,20 @@ Only PDF extraction imports `pypdf`. Text parsing, ranking, generation, and the
 JSON adapter use the standard library. The tests exercise PDF extraction and
 therefore require the dependency. If Windows' `python` points to an unavailable
 Store alias, use an installed interpreter or `py` instead.
+
+For the shared-backend integration checks, also install `backend/requirements.txt`
+(the adapters import its Pydantic models), then run:
+
+```shell
+python -m unittest discover -s tests -p "test_agent_c*.py" -v
+pytest
+```
+
+On Windows, use `python -X utf8 -m pytest` so the existing backend's mock fixtures
+are read as UTF-8 instead of the local ANSI code page.
+
+The component is included in the existing package discovery. `pip install -e
+".[career]"` is an alternative way to install its PDF dependency.
 
 The checked-in example has three job postings and two contacts. It is a smoke
 test for this component, not B's full dataset or D's held-out evaluation corpus.
@@ -57,6 +72,70 @@ There is no HTTP server in Agent C's component; A can expose these functions fro
 its own backend. D should pass the candidate/job/contact records and its current
 generator instructions on **every invocation**, rather than pass a prior message
 to rewrite. Calls are deterministic and do not mutate the supplied records.
+
+## Concrete adapters for the published teammates' contracts
+
+`career_coach.backend_adapter` accepts the existing `backend.schemas` models.
+It leaves those schemas and the frontend type definitions unchanged:
+
+```python
+from career_coach.backend_adapter import (
+    parse_candidate_text, parse_candidate_pdf, profile_from_candidate,
+    match_candidate_jobs, generate_backend_message,
+)
+
+# Same input/output shapes as backend.resume_parser.parse_text/parse_pdf.
+candidate = parse_candidate_text(resume_text)  # backend.schemas.Candidate, R ids
+profile = profile_from_candidate(candidate)   # richer evidence/section view
+
+# Same input/output shape as backend.job_matcher.match.
+matches = match_candidate_jobs(candidate, backend_jobs, target_role)
+# Returns backend.schemas.JobMatch records with original J/R evidence IDs.
+
+# Same argument order as backend.outreach_agent.generate.
+message = generate_backend_message(prompt, candidate, backend_job, persona)
+# Returns backend.schemas.Message with chars < 300 and actual R citations.
+```
+
+These are **opt-in adapters** for the merge agent. This branch does not replace
+the existing `backend.outreach_agent.generate`, mock fixtures, or A/D's run
+orchestration. Selecting `generate_backend_message` gives D actual local
+instruction-controlled outputs instead of the existing fixture/hosted-LLM
+generator; its constrained instruction vocabulary is described below. D's mock
+score-rise demonstration assumes its existing fixture generator, so selecting
+the new generator also requires D to supply appropriate evaluator/optimizer
+behavior, rather than reuse prewritten score expectations. No improvement score
+is claimed for this component.
+
+The backend adapter keeps the established privacy boundary: it sees the chosen
+recipient's name and role, and omits evaluator priorities, pet peeves, and split
+labels. Changing those private fields does not change the generated message.
+The richer standalone contact interface can use public supplied preferences.
+
+`career_coach.dataset_adapter` handles B's actual `DATA_CONTRACT.md` shapes:
+
+```python
+from data.load import build_outreach_example, load_candidates, load_jobs, load_companies
+from career_coach.dataset_adapter import generate_agent_b_outreach, rank_agent_b_jobs
+
+example = build_outreach_example("c03", "j024")
+note = generate_agent_b_outreach(example, {"opening": "evidence_first"})
+
+row = load_candidates()["c03"]
+matches = rank_agent_b_jobs(row, load_jobs(), load_companies(), limit=5)
+```
+
+The adapter resolves `company_id`, `job_id`, `contact_id`, `persona_role`, singular
+`communication_preference`, and skill IDs through B's own lexicon. It extracts
+facts from `resume` and uses `profile.skills` as a restrictive allowlist; it cannot
+add an absent skill. B's brief/detailed/formal communication modes map to local
+tone and length preferences. `rank_agent_b_jobs` filters known insufficient
+degrees, explicit location constraints, declined industry roles, and fields
+declined with B's documented goal wording. It does **not** read reference labels
+to rank recommendations or tune prompts. Empty eligible results are valid: B's
+`c00`, for example, has a B.S. and requires Boston, while all Boston jobs in this
+fixture require higher degrees. Other goal wording may need a reviewed constraint
+object at integration; these adapters are intentionally pragmatic MVP logic.
 
 ## JSON/subprocess interface for a non-Python app
 
@@ -116,7 +195,7 @@ The success envelope above abbreviates the real result fields for documentation.
 Useful error codes include `invalid_input`, `invalid_operation`, `invalid_pdf`,
 `encrypted_pdf`, `ocr_required`, `empty_resume`, `resume_too_large`,
 `unsupported_resume`, `missing_dependency`, `invalid_instructions`,
-`word_budget_too_small`, and the CLI-only `request_too_large`.
+`word_budget_too_small`, `length_budget_too_small`, and the CLI-only `request_too_large`.
 
 ## Input records for B
 
@@ -150,6 +229,10 @@ the evidence from it and does not use modified name/education/experience/skills
 or arbitrary `facts` to add claims. To accept a human-reviewed structured profile,
 omit `raw_text` explicitly at the integration boundary; do not silently fall back
 to unverified profile fields when PDF extraction fails.
+
+Optional `skill_allowlist` is an array of skill names that restricts extracted
+skills. Intersection with documented skills means it cannot create new skills;
+B's adapter uses it to honor its authoritative profile IDs.
 
 ### Job
 
@@ -208,6 +291,7 @@ Structured instructions are the most reliable contract:
 | Field | Default | Accepted values/effect |
 | --- | --- | --- |
 | `max_words` | 120 | Integer 30-250; hard cap on the **body**, subject excluded |
+| `max_chars` | null | Optional integer 60-2000; body character cap; backend adapter enforces 299 |
 | `tone` | `professional` | `professional`, `warm`, `direct` |
 | `opening` | `role_first` | `role_first`, `evidence_first` |
 | `evidence_count` | 1 | Integer 0-3; requested number of distinct resume/profile quotes |
@@ -234,7 +318,8 @@ tone=warm; opening=evidence_first; evidence_count=2; include_metrics=true; max_w
 
 Convenience prose supports warm/friendly, direct/professional, evidence-first,
 role-first, two/three examples, metrics/quantified/measurable, no metrics, no
-skills, no subject, conversation/question, and `under N words`/`at most N words`.
+skills, no subject, conversation/question, and `under N words`/`at most N words`
+or the equivalent character limits.
 Key/value directives override convenience prose. Arbitrary prose is inert and
 returns an interpretation warning; it never supplies new candidate facts. D
 should compare `effective_instructions` to confirm that its revision was applied.
@@ -243,11 +328,11 @@ The generator chooses relevant documented entries, quotes them without rewriting
 the candidate's achievements, and labels skills as listed in the submitted
 resume/profile. Truncated quotes end with a visible ` ...`. Quotes may be omitted
 to fit the budget. When the fixed greeting/job/ask/signature itself cannot fit,
-generation returns `word_budget_too_small` rather than truncate the question or
-claim. If there is no usable candidate evidence, the note expresses interest only
+generation returns `word_budget_too_small` or `length_budget_too_small` rather than
+truncate the question or claim. If there is no usable candidate evidence, the note expresses interest only
 and reports a warning.
 
-Outreach records contain `subject`, `message`, `word_count`, `job_id`, `contact_id`,
+Outreach records contain `subject`, `message`, `word_count`, `char_count`, `job_id`, `contact_id`,
 `target_role`, `effective_instructions`, `claims`, `used_fact_ids`, `grounding`, and
 `warnings`. Each candidate claim has its kind, rendered text, fact ID, original
 source text, and source coordinates/JSON pointer. Grounding means supported by
@@ -267,8 +352,28 @@ Multi-column layouts can interleave text; A should allow profile review. Skills
 are detected from a small vocabulary plus explicit comma/semicolon/pipe-delimited
 skill lists. Aspiration/negation detection is conservative, not semantic NLP.
 
-No teammate branch was merged or overwritten. `.gitignore` only excludes Python
-bytecode, virtual environments, dependency caches, and temporary output. Agent A
+The branch was rebased onto shared `main`; no teammate feature branch was merged
+and no teammate implementation was overwritten. `.gitignore` preserves existing
+rules and adds Python bytecode, dependency caches, and temporary output. Agent A
 can keep its own dependency manifest; the merge agent can consolidate this
 component's one runtime dependency later. There is no RSI implementation in C's
 files, no B-sized dataset, and no fabricated evaluation result.
+
+## Verification recorded for this handoff
+
+Tested on Windows with Python 3.14.7 and pypdf 6.18.1:
+
+- Agent C: `python -X utf8 -m pytest -q tests/test_agent_c.py tests/test_agent_c_integration.py`
+  passed **45 tests and 66 subtests**. This includes real in-memory PDF extraction,
+  all nine B candidates, all 20 backend jobs, line citations, length budgets,
+  instruction changes, unsupported-fact attempts, and JSON/subprocess behavior.
+- Full shared suite: with `OPENROUTER_API_KEY` empty,
+  `python -X utf8 -m pytest -q` passed **59 tests and 66 subtests**, with one existing
+  failure: `tests/test_sandbox.py::test_reorder_baseline_runs_on_val` calls
+  `multiprocessing.get_context("fork")` in `agent_d/sandbox.py:118`. Windows has no
+  `fork` context. This branch does not alter that file or the backend/D code.
+- `git diff --check` passed. The standalone demo and B dataset smoke run produced
+  actual ranked jobs and source-backed notes. No live model call was required.
+
+The merge agent should run D's sandbox check on its supported Unix environment
+or coordinate a separate Windows portability change with D.
