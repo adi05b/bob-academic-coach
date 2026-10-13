@@ -7,6 +7,7 @@ import json
 import random
 from pathlib import Path
 
+from data.export_app import write_app_files
 from data.lexicons import (
     CITIES,
     COMPANIES,
@@ -497,6 +498,9 @@ def write_dataset(out_dir: Path, seed: int = DEFAULT_SEED) -> None:
     }
     with (out_dir / "splits.json").open("w") as f:
         json.dump({"splits": splits, "meta": meta}, f, indent=2)
+
+    if out_dir.name == "synthetic":
+        write_app_files(companies, contacts, jobs, candidates, data_dir=out_dir.parent)
 
 
 def main() -> None:

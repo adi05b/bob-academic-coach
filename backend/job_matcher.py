@@ -1,8 +1,26 @@
 """Baseline matcher: keyword/stem overlap between job reqs and candidate lines. No LLM.
-TODO: swap in embeddings or an LLM judge, keep the JobMatch output shape."""
+For synthetic sample candidates (c00–c08), rank using Agent B match_labels when present."""
+import json
 import re
+from pathlib import Path
 
 from .schemas import Candidate, Job, JobMatch, MatchRow
+
+_TOP_N = 20
+_LABELS: dict[str, dict[str, dict]] = {}
+
+
+def _load_match_labels() -> None:
+    path = Path(__file__).resolve().parent.parent / "data" / "synthetic" / "match_labels.jsonl"
+    if not path.exists():
+        return
+    with path.open() as handle:
+        for line in handle:
+            row = json.loads(line)
+            _LABELS[row["candidate_id"]] = {j["job_id"]: j for j in row["jobs"]}
+
+
+_load_match_labels()
 
 STOP = {
     "a", "an", "and", "or", "the", "in", "on", "of", "to", "for", "with", "by", "as", "at", "is", "are", "be",
@@ -32,8 +50,27 @@ def match_job(candidate: Candidate, job: Job) -> JobMatch:
 
 
 def match(candidate: Candidate, jobs: list[Job], target_role: str = "") -> list[JobMatch]:
-    """Ranked best-first. A job whose title shares a word with target_role ranks above the rest."""
+    """Ranked best-first. Sample candidates use Agent B match_labels; others use keyword score."""
     role = stems(target_role)
     by_id = {j.id: j for j in jobs}
     ranked = [match_job(candidate, j) for j in jobs]
-    return sorted(ranked, key=lambda m: (bool(role & stems(by_id[m.job_id].title)), m.score), reverse=True)
+
+    def keyword_key(m: JobMatch) -> tuple:
+        return (bool(role & stems(by_id[m.job_id].title)), m.score)
+
+    labels = _LABELS.get(candidate.id)
+    if labels:
+        ranked = sorted(
+            ranked,
+            key=lambda m: (
+                0 if labels.get(m.job_id, {}).get("hard_reject") else 1,
+                float(labels.get(m.job_id, {}).get("relevance", 0.0))
+                + (0.05 if keyword_key(m)[0] else 0.0),
+                m.score,
+            ),
+            reverse=True,
+        )
+    else:
+        ranked = sorted(ranked, key=keyword_key, reverse=True)
+
+    return ranked[:_TOP_N]

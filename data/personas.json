@@ -1,155 +1,286 @@
 [
   {
-    "id": "p_ceo_dana",
-    "role": "CEO",
-    "name": "Dana Whitfield",
-    "company": "Lumenstack",
+    "id": "p00",
+    "role": "Recruiter",
+    "name": "Riley Brooks",
+    "company": "Northbridge University",
     "priorities": [
-      "what you would ship for the business in your first 90 days",
-      "ownership and speed",
-      "evidence you built something people used"
+      "clear skills",
+      "location fit",
+      "concise background"
+    ],
+    "pet_peeves": [
+      "copy-pasted templates",
+      "missing location or work authorization",
+      "buzzwords without examples",
+      "overly long cover letters"
+    ],
+    "split": "test"
+  },
+  {
+    "id": "p01",
+    "role": "Engineer",
+    "name": "Quinn Iyer",
+    "company": "Northbridge University",
+    "priorities": [
+      "technical depth",
+      "specific methods",
+      "research taste"
+    ],
+    "pet_peeves": [
+      "vague 'passion for AI'",
+      "no specific project or metric",
+      "third-party recruiter intros with no technical detail"
+    ],
+    "split": "test"
+  },
+  {
+    "id": "p02",
+    "role": "Engineer",
+    "name": "Harper Santos",
+    "company": "Lakeview Institute of Technology",
+    "priorities": [
+      "technical depth",
+      "specific methods",
+      "research taste"
+    ],
+    "pet_peeves": [
+      "vague 'passion for AI'",
+      "no specific project or metric",
+      "third-party recruiter intros with no technical detail"
+    ],
+    "split": "train"
+  },
+  {
+    "id": "p03",
+    "role": "Engineer",
+    "name": "Skyler Nakamura",
+    "company": "Lakeview Institute of Technology",
+    "priorities": [
+      "team fit",
+      "delivery",
+      "mentoring"
+    ],
+    "pet_peeves": [
+      "vague 'passion for AI'",
+      "no specific project or metric",
+      "third-party recruiter intros with no technical detail",
+      "casual slang or emoji"
+    ],
+    "split": "train"
+  },
+  {
+    "id": "p04",
+    "role": "Engineer",
+    "name": "Rowan Berg",
+    "company": "Cedar Hill College",
+    "priorities": [
+      "team fit",
+      "delivery",
+      "mentoring"
+    ],
+    "pet_peeves": [
+      "vague 'passion for AI'",
+      "no specific project or metric",
+      "third-party recruiter intros with no technical detail",
+      "casual slang or emoji"
+    ],
+    "split": "train"
+  },
+  {
+    "id": "p05",
+    "role": "CEO",
+    "name": "Avery Okeke",
+    "company": "Cedar Hill College",
+    "priorities": [
+      "field vision",
+      "seniority",
+      "institutional fit"
     ],
     "pet_peeves": [
       "generic flattery",
       "asking 'are you hiring?'",
-      "long messages with no point"
+      "long messages with no point",
+      "overly long cover letters"
     ],
-    "split": "train"
+    "split": "test"
   },
   {
-    "id": "p_ceo_rafael",
+    "id": "p06",
     "role": "CEO",
-    "name": "Rafael Ortiz",
-    "company": "Quarry Labs",
+    "name": "Parker Laurent",
+    "company": "Midwest Medical School",
     "priorities": [
-      "understanding of our customers' problem",
-      "shipping end to end without hand-holding",
-      "a concrete idea for the product"
+      "field vision",
+      "seniority",
+      "institutional fit"
     ],
     "pet_peeves": [
-      "buzzwords",
-      "copy-pasted messages",
-      "resume summaries with no ask"
+      "generic flattery",
+      "asking 'are you hiring?'",
+      "long messages with no point",
+      "overly long cover letters"
     ],
     "split": "train"
   },
   {
-    "id": "p_ceo_helen",
+    "id": "p07",
+    "role": "Recruiter",
+    "name": "Reese Shah",
+    "company": "Midwest Medical School",
+    "priorities": [
+      "clear skills",
+      "location fit",
+      "concise background"
+    ],
+    "pet_peeves": [
+      "copy-pasted templates",
+      "missing location or work authorization",
+      "buzzwords without examples",
+      "overly long cover letters"
+    ],
+    "split": "train"
+  },
+  {
+    "id": "p08",
+    "role": "Recruiter",
+    "name": "Finley Walsh",
+    "company": "Bay Area Research Lab",
+    "priorities": [
+      "clear skills",
+      "location fit",
+      "concise background"
+    ],
+    "pet_peeves": [
+      "copy-pasted templates",
+      "missing location or work authorization",
+      "buzzwords without examples",
+      "overly long cover letters"
+    ],
+    "split": "train"
+  },
+  {
+    "id": "p09",
+    "role": "Engineer",
+    "name": "Emerson Cho",
+    "company": "Bay Area Research Lab",
+    "priorities": [
+      "technical depth",
+      "specific methods",
+      "research taste"
+    ],
+    "pet_peeves": [
+      "vague 'passion for AI'",
+      "no specific project or metric",
+      "third-party recruiter intros with no technical detail"
+    ],
+    "split": "train"
+  },
+  {
+    "id": "p10",
+    "role": "Engineer",
+    "name": "Hayden Adler",
+    "company": "Harbor Machine Learning",
+    "priorities": [
+      "technical depth",
+      "specific methods",
+      "research taste"
+    ],
+    "pet_peeves": [
+      "vague 'passion for AI'",
+      "no specific project or metric",
+      "third-party recruiter intros with no technical detail"
+    ],
+    "split": "train"
+  },
+  {
+    "id": "p11",
+    "role": "Engineer",
+    "name": "Sawyer Mensah",
+    "company": "Harbor Machine Learning",
+    "priorities": [
+      "team fit",
+      "delivery",
+      "mentoring"
+    ],
+    "pet_peeves": [
+      "vague 'passion for AI'",
+      "no specific project or metric",
+      "third-party recruiter intros with no technical detail",
+      "casual slang or emoji"
+    ],
+    "split": "train"
+  },
+  {
+    "id": "p12",
+    "role": "Engineer",
+    "name": "Cameron Petrov",
+    "company": "Lumen Bioworks",
+    "priorities": [
+      "team fit",
+      "delivery",
+      "mentoring"
+    ],
+    "pet_peeves": [
+      "vague 'passion for AI'",
+      "no specific project or metric",
+      "third-party recruiter intros with no technical detail",
+      "casual slang or emoji"
+    ],
+    "split": "train"
+  },
+  {
+    "id": "p13",
     "role": "CEO",
-    "name": "Helen Cho",
-    "company": "Saltmarsh AI",
+    "name": "Blake Singh",
+    "company": "Lumen Bioworks",
     "priorities": [
-      "impact on revenue or customers",
-      "bias to action",
-      "clarity about why this company"
+      "field vision",
+      "seniority",
+      "institutional fit"
     ],
     "pet_peeves": [
-      "vague passion statements",
-      "claims that can't be checked",
-      "a 'quick chat' request with no reason"
+      "generic flattery",
+      "asking 'are you hiring?'",
+      "long messages with no point",
+      "overly long cover letters"
     ],
-    "split": "test"
+    "split": "train"
   },
   {
-    "id": "p_rec_jasmine",
+    "id": "p14",
+    "role": "CEO",
+    "name": "Drew Moreau",
+    "company": "Northwind Robotics",
+    "priorities": [
+      "field vision",
+      "seniority",
+      "institutional fit"
+    ],
+    "pet_peeves": [
+      "generic flattery",
+      "asking 'are you hiring?'",
+      "long messages with no point",
+      "overly long cover letters"
+    ],
+    "split": "train"
+  },
+  {
+    "id": "p15",
     "role": "Recruiter",
-    "name": "Jasmine Patel",
-    "company": "Copperline Freight",
+    "name": "Jules Kaplan",
+    "company": "Northwind Robotics",
     "priorities": [
-      "clear fit to the posted requirements",
-      "graduation date and availability",
-      "easy-to-scan messages"
+      "clear skills",
+      "location fit",
+      "concise background"
     ],
     "pet_peeves": [
-      "no mention of which role",
-      "walls of text",
-      "inflated titles"
+      "copy-pasted templates",
+      "missing location or work authorization",
+      "buzzwords without examples",
+      "overly long cover letters"
     ],
     "split": "train"
-  },
-  {
-    "id": "p_rec_tom",
-    "role": "Recruiter",
-    "name": "Tom Becker",
-    "company": "Fernhill Health",
-    "priorities": [
-      "which role and why",
-      "evidence for the must-have requirements",
-      "a specific next step"
-    ],
-    "pet_peeves": [
-      "messages meant for another company",
-      "overclaiming skills",
-      "no question or ask"
-    ],
-    "split": "train"
-  },
-  {
-    "id": "p_rec_aisha",
-    "role": "Recruiter",
-    "name": "Aisha Rahman",
-    "company": "Ledgerwise",
-    "priorities": [
-      "match to the req's must-haves",
-      "concise, professional tone",
-      "timeline and availability"
-    ],
-    "pet_peeves": [
-      "generic templates",
-      "typos",
-      "asking for a referral before any context"
-    ],
-    "split": "test"
-  },
-  {
-    "id": "p_eng_kenji",
-    "role": "Engineer",
-    "name": "Kenji Watanabe",
-    "company": "Kiln Robotics",
-    "priorities": [
-      "technical specifics: what you built and how",
-      "real numbers you measured",
-      "curiosity about our stack"
-    ],
-    "pet_peeves": [
-      "sales pitches",
-      "listing every buzzword",
-      "asking for a referral in the first message"
-    ],
-    "split": "train"
-  },
-  {
-    "id": "p_eng_priya",
-    "role": "Engineer",
-    "name": "Priya Sundaram",
-    "company": "Driftwood Data",
-    "priorities": [
-      "concrete systems work",
-      "honest scope of your role",
-      "a good technical question"
-    ],
-    "pet_peeves": [
-      "fluff",
-      "'10x engineer' language",
-      "messages that could be sent to anyone"
-    ],
-    "split": "train"
-  },
-  {
-    "id": "p_eng_marcus",
-    "role": "Engineer",
-    "name": "Marcus Lee",
-    "company": "Orrery Search",
-    "priorities": [
-      "depth on one project over breadth",
-      "evidence of debugging and measurement",
-      "respect for my time"
-    ],
-    "pet_peeves": [
-      "self-promotion with no detail",
-      "made-up metrics",
-      "long asks"
-    ],
-    "split": "test"
   }
 ]

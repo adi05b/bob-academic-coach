@@ -41,6 +41,7 @@ export default function Home() {
   const [n, setN] = useState(4);
   const [run, setRun] = useState<Run | null>(null);
   const [loading, setLoading] = useState<string | null>(null);
+  const [catalogReady, setCatalogReady] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -49,6 +50,7 @@ export default function Home() {
         setHealth(h);
         setJobs(j);
         setPersonas(p);
+        setCatalogReady(j.length > 0 && p.length > 0);
       })
       .catch(() => setError(`Backend not reachable at ${API}. Start it: uvicorn backend.main:app --reload --port 8000`));
   }, []);
@@ -67,6 +69,12 @@ export default function Home() {
 
   const matchFor = (c: Candidate) =>
     busy("Matching jobs…", async () => {
+      if (!jobs.length) {
+        const [j, p] = await Promise.all([api<Job[]>("/jobs"), api<Persona[]>("/personas")]);
+        setJobs(j);
+        setPersonas(p);
+        setCatalogReady(j.length > 0 && p.length > 0);
+      }
       setCandidate(c);
       setRun(null);
       const m = await post<JobMatch[]>("/match", { candidate: c, target_role: targetRole });
@@ -140,7 +148,7 @@ export default function Home() {
           <button className={btn} disabled={!!loading || (!file && !resumeText.trim())} onClick={parseAndMatch}>
             Parse &amp; match
           </button>
-          <button className={btnGhost} disabled={!!loading} onClick={useSample}>
+          <button className={btnGhost} disabled={!!loading || !catalogReady} onClick={useSample}>
             Use sample resume
           </button>
         </div>
@@ -164,7 +172,8 @@ export default function Home() {
                   >
                     <span className="w-10 text-right font-mono text-sm">{m.score}</span>
                     <span className="flex-1 text-sm">
-                      {job?.title} <span className="text-neutral-500">· {job?.company}</span>
+                      {job?.title ?? m.job_id}{" "}
+                      <span className="text-neutral-500">· {job?.company ?? "—"}</span>
                       {c && <span className="block text-xs text-neutral-500">Contact: {c.name}, {c.role}</span>}
                     </span>
                     <span className="text-xs text-emerald-600">{count("Covered")} covered</span>

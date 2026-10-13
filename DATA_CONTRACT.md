@@ -1,6 +1,10 @@
 # Agent B data contract
 
-Synthetic world for Agents C and D. Regenerate with `python -m data.generate`.
+Synthetic world for Agents C and D. Regenerate with `python -m data.generate` (also refreshes app fixtures below).
+
+## App fixtures (backend + UI)
+
+The running FastAPI app loads **`data/jobs.json`**, **`data/personas.json`**, and **`data/resumes.json`** (shapes in `backend/schemas.py`). These are **exported** from `data/synthetic/` on each generate run via `data/export_app.py`. The UI does not read `data/synthetic/` directly.
 
 ## Files (`data/synthetic/`)
 

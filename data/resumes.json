@@ -1,168 +1,346 @@
 [
   {
-    "id": "cand_maya",
+    "id": "c00",
     "lines": [
       {
         "id": "R1",
-        "text": "Maya Lindqvist, B.S. Computer Science, Cedar Valley University, May 2026, GPA 3.8"
+        "text": "Ava Chen"
       },
       {
         "id": "R2",
-        "text": "Software Engineering Intern, Harborlight Logistics (Summer 2025): built a FastAPI service that cut shipment-status lookup latency from 900 ms to 120 ms"
+        "text": "B.S. in Computer Science, Northbridge University"
       },
       {
         "id": "R3",
-        "text": "Moved nightly batch jobs to Airflow with retries and alerting; failed-run rate dropped 60%"
+        "text": "Research focus: cluster computing, computer vision, reinforcement learning"
       },
       {
         "id": "R4",
-        "text": "Wrote PostgreSQL migrations and indexes for a 40M-row events table"
+        "text": "\u2022 Experience with cluster computing"
       },
       {
         "id": "R5",
-        "text": "ML Research Assistant, CVU NLP Lab (2024-2026): fine-tuned a retrieval model in PyTorch, raising recall@10 from 0.61 to 0.74"
+        "text": "\u2022 Experience with computer vision"
       },
       {
         "id": "R6",
-        "text": "Built an evaluation harness that replays 1,200 test queries nightly and flags regressions in Slack"
+        "text": "\u2022 Experience with reinforcement learning"
       },
       {
         "id": "R7",
-        "text": "Co-authored a workshop paper on evaluating retrieval systems"
-      },
-      {
-        "id": "R8",
-        "text": "Teaching Assistant, Data Structures (3 semesters): ran weekly sections for 40 students"
-      },
-      {
-        "id": "R9",
-        "text": "ShelfSense: React + FastAPI app that tracks inventory for the campus food bank, used by 300 students"
-      },
-      {
-        "id": "R10",
-        "text": "Deployed ShelfSense on AWS with Docker and handled on-call for 2 semesters"
-      },
-      {
-        "id": "R11",
-        "text": "1st place, CVU HackDays 2024: LangChain agent that answers course-policy questions"
-      },
-      {
-        "id": "R12",
-        "text": "Skills: Python, TypeScript, SQL, FastAPI, React, PyTorch, PostgreSQL, Docker, AWS, Airflow"
-      },
-      {
-        "id": "R13",
-        "text": "Interests: applied ML, developer tools, talking to users"
+        "text": "\u2022 Experience with natural language processing"
       }
     ]
   },
   {
-    "id": "cand_dev",
+    "id": "c01",
     "lines": [
       {
         "id": "R1",
-        "text": "Dev Raman, B.S. Data Science, Ridgeway Institute of Technology, December 2025, GPA 3.6"
+        "text": "Jordan Okonkwo"
       },
       {
         "id": "R2",
-        "text": "Data Engineering Intern, Copperpot Foods (Summer 2025): rebuilt the daily sales pipeline in Spark, cutting runtime from 3 hours to 25 minutes"
+        "text": "M.S. in Computer Science, Bay Area Research Lab"
       },
       {
         "id": "R3",
-        "text": "Added dbt tests to 45 models, catching schema drift before it reached dashboards"
+        "text": "Research focus: genomic data analysis, PyTorch, neural recording analysis"
       },
       {
         "id": "R4",
-        "text": "Wrote Snowflake cost reports that cut warehouse spend 18% in one quarter"
+        "text": "\u2022 Experience with genomic data analysis"
       },
       {
         "id": "R5",
-        "text": "Analytics Intern, Ridgeway Transit Office (2024): built a ridership forecast in Python with pandas and scikit-learn"
+        "text": "\u2022 Experience with PyTorch"
       },
       {
         "id": "R6",
-        "text": "Cleaned 6 years of turnstile data and published a Tableau dashboard used by planning staff"
+        "text": "\u2022 Experience with neural recording analysis"
       },
       {
         "id": "R7",
-        "text": "StreamTally: Kafka consumer that aggregates live game scores into Redis for a campus app"
+        "text": "\u2022 Experience with computer vision"
       },
       {
         "id": "R8",
-        "text": "Open-source contributor to a data-validation plugin (2 merged PRs)"
-      },
-      {
-        "id": "R9",
-        "text": "President, Ridgeway Data Club: organized 4 workshops on SQL and Airflow"
-      },
-      {
-        "id": "R10",
-        "text": "Coursework: Distributed Systems, Databases, Statistical Learning"
-      },
-      {
-        "id": "R11",
-        "text": "Skills: Python, SQL, Spark, Kafka, Airflow, dbt, Snowflake, Redis, Docker, GCP"
-      },
-      {
-        "id": "R12",
-        "text": "Interests: data quality, streaming systems"
+        "text": "\u2022 Experience with mentored undergraduates"
       }
     ]
   },
   {
-    "id": "cand_sofia",
+    "id": "c02",
     "lines": [
       {
         "id": "R1",
-        "text": "Sofia Mendez, B.S. Computer Engineering, Lakeshore Polytechnic, June 2026"
+        "text": "Priya Patel"
       },
       {
         "id": "R2",
-        "text": "AI Solutions Intern, Pinegrove Software (Summer 2025): built RAG demos for 6 enterprise prospects using LangChain"
+        "text": "Ph.D. in Computer Science, Lakeview Institute of Technology"
       },
       {
         "id": "R3",
-        "text": "Shortened proof-of-concept setup from two weeks to three days by templating ingestion with Docker"
+        "text": "Research focus: statistical modeling, reinforcement learning, computer vision"
       },
       {
         "id": "R4",
-        "text": "Ran weekly demo calls with customer engineering teams and wrote follow-up integration guides"
+        "text": "\u2022 Experience with statistical modeling"
       },
       {
         "id": "R5",
-        "text": "Undergraduate Researcher, Lakeshore Vision Lab: trained object detectors in PyTorch on a 30k-image dataset, +7 mAP over baseline"
+        "text": "\u2022 Experience with reinforcement learning"
       },
       {
         "id": "R6",
-        "text": "Exported models to ONNX and served them with FastAPI on GCP"
+        "text": "\u2022 Experience with computer vision"
       },
       {
         "id": "R7",
-        "text": "ClinicQueue: Next.js + PostgreSQL scheduling tool for a free clinic with 150 weekly users"
+        "text": "\u2022 Experience with peer-reviewed publications"
       },
       {
         "id": "R8",
-        "text": "Slack bot that summarizes support threads with an LLM, adopted by 3 student orgs"
+        "text": "\u2022 Experience with PyTorch"
       },
       {
         "id": "R9",
-        "text": "Peer Tutor, Calculus and Physics (2 years)"
+        "text": "\u2022 Experience with algorithmic fairness"
+      }
+    ]
+  },
+  {
+    "id": "c03",
+    "lines": [
+      {
+        "id": "R1",
+        "text": "Marcus Nguyen"
+      },
+      {
+        "id": "R2",
+        "text": "B.S. in Computer Science, Midwest Medical School"
+      },
+      {
+        "id": "R3",
+        "text": "Research focus: genomic data analysis, statistical modeling, reinforcement learning"
+      },
+      {
+        "id": "R4",
+        "text": "\u2022 Experience with genomic data analysis"
+      },
+      {
+        "id": "R5",
+        "text": "\u2022 Experience with statistical modeling"
+      },
+      {
+        "id": "R6",
+        "text": "\u2022 Experience with reinforcement learning"
+      },
+      {
+        "id": "R7",
+        "text": "\u2022 Experience with TensorFlow"
+      },
+      {
+        "id": "R8",
+        "text": "\u2022 Experience with peer-reviewed publications"
+      },
+      {
+        "id": "R9",
+        "text": "\u2022 Experience with natural language processing"
       },
       {
         "id": "R10",
-        "text": "Hackathon finalist, Lakeshore Hacks 2025: voice assistant for warehouse pickers"
+        "text": "\u2022 Experience with cluster computing"
+      }
+    ]
+  },
+  {
+    "id": "c04",
+    "lines": [
+      {
+        "id": "R1",
+        "text": "Elena Garcia"
       },
       {
-        "id": "R11",
-        "text": "Skills: Python, TypeScript, PyTorch, LangChain, FastAPI, Next.js, PostgreSQL, Docker, GCP"
+        "id": "R2",
+        "text": "M.S. in Computer Science, Northbridge University"
       },
       {
-        "id": "R12",
-        "text": "Languages: Spanish (native), English"
+        "id": "R3",
+        "text": "Research focus: genomic data analysis, cluster computing, mentored undergraduates"
       },
       {
-        "id": "R13",
-        "text": "Interests: customer-facing engineering, applied AI"
+        "id": "R4",
+        "text": "\u2022 Experience with genomic data analysis"
+      },
+      {
+        "id": "R5",
+        "text": "\u2022 Experience with cluster computing"
+      },
+      {
+        "id": "R6",
+        "text": "\u2022 Experience with mentored undergraduates"
+      },
+      {
+        "id": "R7",
+        "text": "\u2022 Experience with statistical modeling"
+      }
+    ]
+  },
+  {
+    "id": "c05",
+    "lines": [
+      {
+        "id": "R1",
+        "text": "Sam Kim"
+      },
+      {
+        "id": "R2",
+        "text": "Ph.D. in Computer Science, Northbridge University"
+      },
+      {
+        "id": "R3",
+        "text": "Research focus: TensorFlow, reinforcement learning, natural language processing"
+      },
+      {
+        "id": "R4",
+        "text": "\u2022 Experience with TensorFlow"
+      },
+      {
+        "id": "R5",
+        "text": "\u2022 Experience with reinforcement learning"
+      },
+      {
+        "id": "R6",
+        "text": "\u2022 Experience with natural language processing"
+      },
+      {
+        "id": "R7",
+        "text": "\u2022 Experience with cluster computing"
+      },
+      {
+        "id": "R8",
+        "text": "\u2022 Experience with PyTorch"
+      }
+    ]
+  },
+  {
+    "id": "c06",
+    "lines": [
+      {
+        "id": "R1",
+        "text": "Noah Rossi"
+      },
+      {
+        "id": "R2",
+        "text": "B.S. in Computer Science, Midwest Medical School"
+      },
+      {
+        "id": "R3",
+        "text": "Research focus: peer-reviewed publications, genomic data analysis, statistical modeling"
+      },
+      {
+        "id": "R4",
+        "text": "\u2022 Experience with peer-reviewed publications"
+      },
+      {
+        "id": "R5",
+        "text": "\u2022 Experience with genomic data analysis"
+      },
+      {
+        "id": "R6",
+        "text": "\u2022 Experience with statistical modeling"
+      },
+      {
+        "id": "R7",
+        "text": "\u2022 Experience with algorithmic fairness"
+      },
+      {
+        "id": "R8",
+        "text": "\u2022 Experience with cluster computing"
+      },
+      {
+        "id": "R9",
+        "text": "\u2022 Experience with reinforcement learning"
+      }
+    ]
+  },
+  {
+    "id": "c07",
+    "lines": [
+      {
+        "id": "R1",
+        "text": "Mei Ali"
+      },
+      {
+        "id": "R2",
+        "text": "M.S. in Computer Science, Bay Area Research Lab"
+      },
+      {
+        "id": "R3",
+        "text": "Research focus: TensorFlow, genomic data analysis, peer-reviewed publications"
+      },
+      {
+        "id": "R4",
+        "text": "\u2022 Experience with TensorFlow"
+      },
+      {
+        "id": "R5",
+        "text": "\u2022 Experience with genomic data analysis"
+      },
+      {
+        "id": "R6",
+        "text": "\u2022 Experience with peer-reviewed publications"
+      },
+      {
+        "id": "R7",
+        "text": "\u2022 Experience with computer vision"
+      },
+      {
+        "id": "R8",
+        "text": "\u2022 Experience with reinforcement learning"
+      },
+      {
+        "id": "R9",
+        "text": "\u2022 Experience with PyTorch"
+      },
+      {
+        "id": "R10",
+        "text": "\u2022 Experience with statistical modeling"
+      }
+    ]
+  },
+  {
+    "id": "c08",
+    "lines": [
+      {
+        "id": "R1",
+        "text": "Diego Fischer"
+      },
+      {
+        "id": "R2",
+        "text": "Ph.D. in Computer Science, Cedar Hill College"
+      },
+      {
+        "id": "R3",
+        "text": "Research focus: PyTorch, mentored undergraduates, cluster computing"
+      },
+      {
+        "id": "R4",
+        "text": "\u2022 Experience with PyTorch"
+      },
+      {
+        "id": "R5",
+        "text": "\u2022 Experience with mentored undergraduates"
+      },
+      {
+        "id": "R6",
+        "text": "\u2022 Experience with cluster computing"
+      },
+      {
+        "id": "R7",
+        "text": "\u2022 Experience with computer vision"
       }
     ]
   }

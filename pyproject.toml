@@ -17,3 +17,4 @@ include = ["data*", "agent_d*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests", "backend/tests"]
+pythonpath = ["."]
