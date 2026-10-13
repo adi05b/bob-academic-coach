@@ -19,6 +19,7 @@ def test_app_json_loads_and_links():
     for job in jobs:
         assert job.contact_persona_id in persona_ids
         assert job.reqs
+        assert job.description.strip()
         assert job.id.startswith("j")
 
     splits = {p.split for p in personas}

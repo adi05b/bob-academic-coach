@@ -1,10 +1,13 @@
 """HTTP surface. Run from the repo root: uvicorn backend.main:app --reload --port 8000"""
 import json
+import queue
 import re
+import threading
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 
 from . import llm
@@ -79,12 +82,49 @@ def match_jobs(body: MatchBody):
     return match(body.candidate, JOBS, body.target_role)
 
 
+def _job_or_404(job_id: str) -> Job:
+    job = next((j for j in JOBS if j.id == job_id), None)
+    if job is None:
+        raise HTTPException(404, f"unknown job_id {job_id}")
+    return job
+
+
 @app.post("/run", response_model=Run)
 def run(body: RunBody):
-    job = next((j for j in JOBS if j.id == body.job_id), None)
-    if job is None:
-        raise HTTPException(404, f"unknown job_id {body.job_id}")
-    return run_rsi(body.candidate, job, PERSONAS, body.n)
+    return run_rsi(body.candidate, _job_or_404(body.job_id), PERSONAS, body.n)
+
+
+@app.post("/run/stream")
+def run_stream(body: RunBody):
+    """Server-sent progress events, then a final event with the completed run."""
+    job = _job_or_404(body.job_id)
+    events: queue.Queue = queue.Queue()
+
+    def on_progress(label: str, done: int, total: int) -> None:
+        events.put({"label": label, "done": done, "total": total})
+
+    def work() -> None:
+        try:
+            finished = run_rsi(body.candidate, job, PERSONAS, body.n, on_progress)
+            events.put({"run": json.loads(finished.model_dump_json())})
+        except Exception as exc:
+            events.put({"error": str(exc)})
+        events.put(None)
+
+    threading.Thread(target=work, daemon=True).start()
+
+    def generate():
+        while True:
+            item = events.get()
+            if item is None:
+                break
+            yield f"data: {json.dumps(item)}\n\n"
+
+    return StreamingResponse(
+        generate(),
+        media_type="text/event-stream",
+        headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+    )
 
 
 @app.get("/runs/{run_id}", response_model=Run)

@@ -58,6 +58,7 @@ def export_jobs(jobs: list[dict], companies: list[dict]) -> list[dict]:
                 "title": job["title"],
                 "reqs": reqs,
                 "contact_persona_id": job["contact_id"],
+                "description": job.get("description", ""),
             }
         )
     return out

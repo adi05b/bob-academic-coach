@@ -1,7 +1,14 @@
 // Mirror of backend/schemas.py. Change both together.
 export type Line = { id: string; text: string };
 export type Candidate = { id: string; lines: Line[] };
-export type Job = { id: string; company: string; title: string; reqs: Line[]; contact_persona_id: string };
+export type Job = {
+  id: string;
+  company: string;
+  title: string;
+  reqs: Line[];
+  contact_persona_id: string;
+  description?: string;
+};
 export type Persona = {
   id: string;
   role: "CEO" | "Recruiter" | "Engineer";

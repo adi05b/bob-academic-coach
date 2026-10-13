@@ -20,6 +20,7 @@ class Job(BaseModel):
     title: str
     reqs: list[Line]
     contact_persona_id: str
+    description: str = ""
 
 
 class Persona(BaseModel):

@@ -41,6 +41,7 @@ export default function Home() {
   const [n, setN] = useState(4);
   const [run, setRun] = useState<Run | null>(null);
   const [loading, setLoading] = useState<string | null>(null);
+  const [progress, setProgress] = useState<{ done: number; total: number; label: string } | null>(null);
   const [catalogReady, setCatalogReady] = useState(false);
   const [error, setError] = useState("");
 
@@ -102,9 +103,45 @@ export default function Home() {
     });
 
   const startRun = () =>
-    busy(`Running ${n} iterations… (mock mode is instant; live LLM calls take a few minutes)`, async () => {
-      setRun(await post<Run>("/run", { candidate, job_id: jobId, n }));
-    });
+    busy("Optimizing outreach…", async () => {
+      setRun(null);
+      setProgress({ done: 0, total: 1, label: "Starting the loop…" });
+      const r = await fetch(API + "/run/stream", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ candidate, job_id: jobId, n }),
+      });
+      if (!r.ok || !r.body) throw new Error(`${r.status}: ${await r.text()}`);
+      const reader = r.body.getReader();
+      const dec = new TextDecoder();
+      let buf = "";
+      let finished: Run | null = null;
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+        buf += dec.decode(value, { stream: true });
+        const parts = buf.split("\n\n");
+        buf = parts.pop() ?? "";
+        for (const part of parts) {
+          const line = part.split("\n").find((l) => l.startsWith("data: "));
+          if (!line) continue;
+          const ev = JSON.parse(line.slice(6)) as {
+            label?: string;
+            done?: number;
+            total?: number;
+            run?: Run;
+            error?: string;
+          };
+          if (ev.error) throw new Error(ev.error);
+          if (ev.run) finished = ev.run;
+          else if (ev.label != null && ev.done != null && ev.total != null)
+            setProgress({ done: ev.done, total: ev.total, label: ev.label });
+        }
+      }
+      if (!finished) throw new Error("Run ended before a result arrived");
+      setProgress({ done: 1, total: 1, label: "Done" });
+      setRun(finished);
+    }).finally(() => setProgress(null));
 
   const jobById = Object.fromEntries(jobs.map((j) => [j.id, j]));
   const personaById = Object.fromEntries(personas.map((p) => [p.id, p]));
@@ -131,7 +168,7 @@ export default function Home() {
       <section className={card + " space-y-3"}>
         <h2 className="font-semibold">1. Resume</h2>
         <textarea
-          className="w-full h-36 rounded-lg border border-black/15 dark:border-white/20 bg-transparent p-2 text-sm font-mono"
+          className="w-full min-h-36 max-h-[28rem] rounded-lg border border-black/15 dark:border-white/20 bg-transparent p-2 text-sm font-mono field-sizing-content"
           placeholder="Paste your resume, one bullet per line…"
           value={resumeText}
           onChange={(e) => setResumeText(e.target.value)}
@@ -183,6 +220,48 @@ export default function Home() {
               );
             })}
           </ul>
+          {jobId && jobById[jobId] && (
+            <div className="grid gap-4 md:grid-cols-2 pt-2">
+              <div className="space-y-2">
+                <h3 className="text-sm font-medium">Full resume</h3>
+                {candidate ? (
+                  <ol className="max-h-80 overflow-y-auto space-y-1 text-sm">
+                    {candidate.lines.map((line) => (
+                      <li key={line.id} className="flex gap-2">
+                        <span className="shrink-0 font-mono text-xs text-neutral-500 pt-0.5">{line.id}</span>
+                        <span>{line.text}</span>
+                      </li>
+                    ))}
+                  </ol>
+                ) : (
+                  <p className="text-sm text-neutral-500">Load a resume to see every parsed line.</p>
+                )}
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-sm font-medium">Full job description</h3>
+                <p className="text-sm font-medium">
+                  {jobById[jobId].title}{" "}
+                  <span className="font-normal text-neutral-500">· {jobById[jobId].company}</span>
+                </p>
+                {contact && (
+                  <p className="text-xs text-neutral-500">
+                    Contact: {contact.name}, {contact.role} at {contact.company}
+                  </p>
+                )}
+                <p className="text-sm whitespace-pre-wrap">
+                  {jobById[jobId].description?.trim() || "No description on this posting."}
+                </p>
+                <ul className="space-y-1 text-sm">
+                  {jobById[jobId].reqs.map((req) => (
+                    <li key={req.id} className="flex gap-2">
+                      <span className="shrink-0 font-mono text-xs text-neutral-500 pt-0.5">{req.id}</span>
+                      <span>{req.text}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          )}
         </section>
       )}
 
@@ -212,7 +291,38 @@ export default function Home() {
         </section>
       )}
 
-      {loading && (
+      {progress && (
+        <section className={card + " space-y-3"}>
+          <div className="flex items-baseline justify-between gap-3">
+            <h2 className="font-semibold">Optimizing outreach</h2>
+            <span className="font-mono text-sm tabular-nums">
+              {Math.min(100, Math.round((progress.done / Math.max(progress.total, 1)) * 100))}%
+            </span>
+          </div>
+          <div className="h-2.5 overflow-hidden rounded-full bg-black/10 dark:bg-white/10">
+            <div
+              className={`h-full rounded-full bg-emerald-500 transition-[width] duration-500 ease-out ${progress.done === 0 ? "w-[12%] animate-pulse" : ""}`}
+              style={progress.done === 0 ? undefined : { width: `${Math.min(100, (progress.done / Math.max(progress.total, 1)) * 100)}%` }}
+            />
+          </div>
+          <p className="text-sm text-neutral-500">{progress.label}</p>
+          <div className="flex gap-1.5">
+            {Array.from({ length: n }, (_, i) => {
+              const frac = progress.done / Math.max(progress.total, 1);
+              const start = i / n;
+              const end = (i + 1) / n;
+              const fill = frac <= start ? 0 : frac >= end ? 1 : (frac - start) / (end - start);
+              return (
+                <div key={i} className="h-1.5 flex-1 overflow-hidden rounded-full bg-black/10 dark:bg-white/10">
+                  <div className="h-full rounded-full bg-emerald-500/80 transition-[width] duration-500" style={{ width: `${fill * 100}%` }} />
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
+      {loading && !progress && (
         <p className="flex items-center gap-2 text-sm text-neutral-500">
           <span className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
           {loading}

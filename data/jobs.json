@@ -21,7 +21,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p00"
+    "contact_persona_id": "p00",
+    "description": "Northbridge University seeks a colleague for a postdoc role in computational neuroscience. Location: Boston, MA. PhD required. We value experience with: visual recognition; mentoring students; scientific writing."
   },
   {
     "id": "j001",
@@ -49,7 +50,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p03"
+    "contact_persona_id": "p03",
+    "description": "Lakeview Institute of Technology seeks a colleague for a assistant professor role in computational neuroscience. Location: San Francisco, CA. PhD required. We value experience with: deep learning frameworks such as PyTorch; mentoring students; visual recognition; large-scale training. Teaching and mentoring are part of the position."
   },
   {
     "id": "j002",
@@ -81,7 +83,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p04"
+    "contact_persona_id": "p04",
+    "description": "Cedar Hill College seeks a colleague for a lecturer role in robotics. Location: Seattle, WA. Master's degree or higher required. We value experience with: high-throughput sequencing; visual recognition; neural data analysis; sequential decision making; deep learning frameworks such as PyTorch."
   },
   {
     "id": "j003",
@@ -105,7 +108,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p07"
+    "contact_persona_id": "p07",
+    "description": "Midwest Medical School seeks a colleague for a research scientist role in computational neuroscience. Location: Austin, TX. PhD required. We value experience with: computational linguistics; high-throughput sequencing; probabilistic modeling."
   },
   {
     "id": "j004",
@@ -133,7 +137,8 @@
         "text": "Bachelor's degree or higher required"
       }
     ],
-    "contact_persona_id": "p12"
+    "contact_persona_id": "p12",
+    "description": "a leading technology company seeks a colleague for a industry research role in robotics. Location: Pittsburgh, PA. Master's degree or higher required. We value experience with: sequential decision making; computational linguistics; visual recognition; probabilistic modeling. This is an industry research role with product impact."
   },
   {
     "id": "j005",
@@ -165,7 +170,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p01"
+    "contact_persona_id": "p01",
+    "description": "Northbridge University seeks a colleague for a postdoc role in computational neuroscience. Location: Boston, MA. PhD required. We value experience with: experience with TensorFlow or JAX; fairness in ML; high-throughput sequencing; large-scale training; probabilistic modeling."
   },
   {
     "id": "j006",
@@ -189,7 +195,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p02"
+    "contact_persona_id": "p02",
+    "description": "Lakeview Institute of Technology seeks a colleague for a assistant professor role in computational neuroscience. Location: San Francisco, CA. PhD required. We value experience with: probabilistic modeling; scientific writing; sequential decision making. Teaching and mentoring are part of the position."
   },
   {
     "id": "j007",
@@ -217,7 +224,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p05"
+    "contact_persona_id": "p05",
+    "description": "Cedar Hill College seeks a colleague for a lecturer role in robotics. Location: Seattle, WA. PhD required. We value experience with: deep learning frameworks such as PyTorch; neural data analysis; mentoring students; experience with TensorFlow or JAX."
   },
   {
     "id": "j008",
@@ -249,7 +257,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p06"
+    "contact_persona_id": "p06",
+    "description": "Midwest Medical School seeks a colleague for a research scientist role in computational neuroscience. Location: Austin, TX. PhD required. We value experience with: high-throughput sequencing; experience with TensorFlow or JAX; mentoring students; sequential decision making; probabilistic modeling."
   },
   {
     "id": "j009",
@@ -273,7 +282,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p11"
+    "contact_persona_id": "p11",
+    "description": "a leading technology company seeks a colleague for a industry research role in robotics. Location: New York, NY. Master's degree or higher required. We value experience with: scientific writing; visual recognition; experience with TensorFlow or JAX. This is an industry research role with product impact."
   },
   {
     "id": "j010",
@@ -301,7 +311,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p00"
+    "contact_persona_id": "p00",
+    "description": "Northbridge University seeks a colleague for a postdoc role in computational neuroscience. Location: Boston, MA. PhD required. We value experience with: deep learning frameworks such as PyTorch; large-scale training; visual recognition; sequential decision making."
   },
   {
     "id": "j011",
@@ -333,7 +344,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p03"
+    "contact_persona_id": "p03",
+    "description": "Lakeview Institute of Technology seeks a colleague for a assistant professor role in computational neuroscience. Location: San Francisco, CA. PhD required. We value experience with: experience with TensorFlow or JAX; visual recognition; fairness in ML; high-throughput sequencing; sequential decision making. Teaching and mentoring are part of the position."
   },
   {
     "id": "j012",
@@ -357,7 +369,8 @@
         "text": "Bachelor's degree or higher required"
       }
     ],
-    "contact_persona_id": "p04"
+    "contact_persona_id": "p04",
+    "description": "Cedar Hill College seeks a colleague for a lecturer role in robotics. Location: Seattle, WA. Master's degree or higher required. We value experience with: neural data analysis; large-scale training; probabilistic modeling."
   },
   {
     "id": "j013",
@@ -385,7 +398,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p07"
+    "contact_persona_id": "p07",
+    "description": "Midwest Medical School seeks a colleague for a research scientist role in computational neuroscience. Location: Austin, TX. PhD required. We value experience with: computational linguistics; probabilistic modeling; large-scale training; visual recognition."
   },
   {
     "id": "j014",
@@ -417,7 +431,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p14"
+    "contact_persona_id": "p14",
+    "description": "a leading technology company seeks a colleague for a industry research role in robotics. Location: Madison, WI. PhD required. We value experience with: large-scale training; sequential decision making; experience with TensorFlow or JAX; computational linguistics; visual recognition. This is an industry research role with product impact."
   },
   {
     "id": "j015",
@@ -441,7 +456,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p01"
+    "contact_persona_id": "p01",
+    "description": "Northbridge University seeks a colleague for a postdoc role in computational neuroscience. Location: Boston, MA. PhD required. We value experience with: computational linguistics; neural data analysis; high-throughput sequencing."
   },
   {
     "id": "j016",
@@ -469,7 +485,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p02"
+    "contact_persona_id": "p02",
+    "description": "Lakeview Institute of Technology seeks a colleague for a assistant professor role in computational neuroscience. Location: San Francisco, CA. PhD required. We value experience with: sequential decision making; large-scale training; mentoring students; visual recognition. Teaching and mentoring are part of the position."
   },
   {
     "id": "j017",
@@ -501,7 +518,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p05"
+    "contact_persona_id": "p05",
+    "description": "Cedar Hill College seeks a colleague for a lecturer role in robotics. Location: Seattle, WA. Master's degree or higher required. We value experience with: large-scale training; probabilistic modeling; deep learning frameworks such as PyTorch; visual recognition; scientific writing."
   },
   {
     "id": "j018",
@@ -525,7 +543,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p06"
+    "contact_persona_id": "p06",
+    "description": "Midwest Medical School seeks a colleague for a research scientist role in computational neuroscience. Location: Austin, TX. PhD required. We value experience with: probabilistic modeling; high-throughput sequencing; sequential decision making."
   },
   {
     "id": "j019",
@@ -553,7 +572,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p13"
+    "contact_persona_id": "p13",
+    "description": "a leading technology company seeks a colleague for a industry research role in robotics. Location: Pittsburgh, PA. Master's degree or higher required. We value experience with: experience with TensorFlow or JAX; visual recognition; scientific writing; probabilistic modeling. This is an industry research role with product impact."
   },
   {
     "id": "j020",
@@ -585,7 +605,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p00"
+    "contact_persona_id": "p00",
+    "description": "Northbridge University seeks a colleague for a postdoc role in computational neuroscience. Location: Boston, MA. PhD required. We value experience with: visual recognition; large-scale training; neural data analysis; high-throughput sequencing; scientific writing."
   },
   {
     "id": "j021",
@@ -609,7 +630,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p03"
+    "contact_persona_id": "p03",
+    "description": "Lakeview Institute of Technology seeks a colleague for a assistant professor role in computational neuroscience. Location: San Francisco, CA. PhD required. We value experience with: computational linguistics; sequential decision making; fairness in ML. Teaching and mentoring are part of the position."
   },
   {
     "id": "j022",
@@ -637,7 +659,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p04"
+    "contact_persona_id": "p04",
+    "description": "Cedar Hill College seeks a colleague for a lecturer role in robotics. Location: Seattle, WA. Master's degree or higher required. We value experience with: visual recognition; mentoring students; large-scale training; sequential decision making."
   },
   {
     "id": "j023",
@@ -669,7 +692,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p07"
+    "contact_persona_id": "p07",
+    "description": "Midwest Medical School seeks a colleague for a research scientist role in computational neuroscience. Location: Austin, TX. PhD required. We value experience with: fairness in ML; scientific writing; high-throughput sequencing; large-scale training; probabilistic modeling."
   },
   {
     "id": "j024",
@@ -693,7 +717,8 @@
         "text": "Bachelor's degree or higher required"
       }
     ],
-    "contact_persona_id": "p10"
+    "contact_persona_id": "p10",
+    "description": "a leading technology company seeks a colleague for a industry research role in robotics. Location: New York, NY. Master's degree or higher required. We value experience with: visual recognition; computational linguistics; mentoring students. This is an industry research role with product impact."
   },
   {
     "id": "j025",
@@ -721,7 +746,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p01"
+    "contact_persona_id": "p01",
+    "description": "Northbridge University seeks a colleague for a postdoc role in computational neuroscience. Location: Boston, MA. PhD required. We value experience with: neural data analysis; experience with TensorFlow or JAX; deep learning frameworks such as PyTorch; large-scale training."
   },
   {
     "id": "j026",
@@ -753,7 +779,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p02"
+    "contact_persona_id": "p02",
+    "description": "Lakeview Institute of Technology seeks a colleague for a assistant professor role in computational neuroscience. Location: San Francisco, CA. PhD required. We value experience with: computational linguistics; large-scale training; fairness in ML; high-throughput sequencing; experience with TensorFlow or JAX. Teaching and mentoring are part of the position."
   },
   {
     "id": "j027",
@@ -777,7 +804,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p05"
+    "contact_persona_id": "p05",
+    "description": "Cedar Hill College seeks a colleague for a lecturer role in robotics. Location: Seattle, WA. Master's degree or higher required. We value experience with: high-throughput sequencing; fairness in ML; scientific writing."
   },
   {
     "id": "j028",
@@ -805,7 +833,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p06"
+    "contact_persona_id": "p06",
+    "description": "Midwest Medical School seeks a colleague for a research scientist role in computational neuroscience. Location: Austin, TX. PhD required. We value experience with: neural data analysis; mentoring students; sequential decision making; large-scale training."
   },
   {
     "id": "j029",
@@ -837,7 +866,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p15"
+    "contact_persona_id": "p15",
+    "description": "a leading technology company seeks a colleague for a industry research role in robotics. Location: Madison, WI. Master's degree or higher required. We value experience with: deep learning frameworks such as PyTorch; large-scale training; experience with TensorFlow or JAX; mentoring students; sequential decision making. This is an industry research role with product impact."
   },
   {
     "id": "j030",
@@ -861,7 +891,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p00"
+    "contact_persona_id": "p00",
+    "description": "Northbridge University seeks a colleague for a postdoc role in computational neuroscience. Location: Boston, MA. PhD required. We value experience with: large-scale training; probabilistic modeling; experience with TensorFlow or JAX."
   },
   {
     "id": "j031",
@@ -889,7 +920,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p03"
+    "contact_persona_id": "p03",
+    "description": "Lakeview Institute of Technology seeks a colleague for a assistant professor role in computational neuroscience. Location: San Francisco, CA. PhD required. We value experience with: sequential decision making; high-throughput sequencing; computational linguistics; neural data analysis. Teaching and mentoring are part of the position."
   },
   {
     "id": "j032",
@@ -921,7 +953,8 @@
         "text": "Bachelor's degree or higher required"
       }
     ],
-    "contact_persona_id": "p04"
+    "contact_persona_id": "p04",
+    "description": "Cedar Hill College seeks a colleague for a lecturer role in robotics. Location: Seattle, WA. Master's degree or higher required. We value experience with: deep learning frameworks such as PyTorch; sequential decision making; mentoring students; computational linguistics; experience with TensorFlow or JAX."
   },
   {
     "id": "j033",
@@ -945,7 +978,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p07"
+    "contact_persona_id": "p07",
+    "description": "Midwest Medical School seeks a colleague for a research scientist role in computational neuroscience. Location: Austin, TX. PhD required. We value experience with: large-scale training; sequential decision making; mentoring students."
   },
   {
     "id": "j034",
@@ -973,7 +1007,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p12"
+    "contact_persona_id": "p12",
+    "description": "a leading technology company seeks a colleague for a industry research role in robotics. Location: Pittsburgh, PA. Master's degree or higher required. We value experience with: scientific writing; visual recognition; computational linguistics; probabilistic modeling. This is an industry research role with product impact."
   },
   {
     "id": "j035",
@@ -1005,7 +1040,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p01"
+    "contact_persona_id": "p01",
+    "description": "Northbridge University seeks a colleague for a postdoc role in computational neuroscience. Location: Boston, MA. PhD required. We value experience with: computational linguistics; mentoring students; large-scale training; deep learning frameworks such as PyTorch; probabilistic modeling."
   },
   {
     "id": "j036",
@@ -1029,7 +1065,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p02"
+    "contact_persona_id": "p02",
+    "description": "Lakeview Institute of Technology seeks a colleague for a assistant professor role in computational neuroscience. Location: San Francisco, CA. PhD required. We value experience with: neural data analysis; deep learning frameworks such as PyTorch; experience with TensorFlow or JAX. Teaching and mentoring are part of the position."
   },
   {
     "id": "j037",
@@ -1057,7 +1094,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p05"
+    "contact_persona_id": "p05",
+    "description": "Cedar Hill College seeks a colleague for a lecturer role in robotics. Location: Seattle, WA. Master's degree or higher required. We value experience with: probabilistic modeling; sequential decision making; visual recognition; deep learning frameworks such as PyTorch."
   },
   {
     "id": "j038",
@@ -1089,7 +1127,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p06"
+    "contact_persona_id": "p06",
+    "description": "Midwest Medical School seeks a colleague for a research scientist role in computational neuroscience. Location: Austin, TX. PhD required. We value experience with: visual recognition; scientific writing; experience with TensorFlow or JAX; large-scale training; neural data analysis."
   },
   {
     "id": "j039",
@@ -1113,7 +1152,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p11"
+    "contact_persona_id": "p11",
+    "description": "a leading technology company seeks a colleague for a industry research role in robotics. Location: New York, NY. Master's degree or higher required. We value experience with: experience with TensorFlow or JAX; mentoring students; computational linguistics. This is an industry research role with product impact."
   },
   {
     "id": "j040",
@@ -1141,7 +1181,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p00"
+    "contact_persona_id": "p00",
+    "description": "Northbridge University seeks a colleague for a postdoc role in computational neuroscience. Location: Boston, MA. PhD required. We value experience with: computational linguistics; large-scale training; neural data analysis; mentoring students."
   },
   {
     "id": "j041",
@@ -1173,7 +1214,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p03"
+    "contact_persona_id": "p03",
+    "description": "Lakeview Institute of Technology seeks a colleague for a assistant professor role in computational neuroscience. Location: San Francisco, CA. PhD required. We value experience with: computational linguistics; sequential decision making; mentoring students; high-throughput sequencing; visual recognition. Teaching and mentoring are part of the position."
   },
   {
     "id": "j042",
@@ -1197,7 +1239,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p04"
+    "contact_persona_id": "p04",
+    "description": "Cedar Hill College seeks a colleague for a lecturer role in robotics. Location: Seattle, WA. PhD required. We value experience with: mentoring students; visual recognition; sequential decision making."
   },
   {
     "id": "j043",
@@ -1225,7 +1268,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p07"
+    "contact_persona_id": "p07",
+    "description": "Midwest Medical School seeks a colleague for a research scientist role in computational neuroscience. Location: Austin, TX. PhD required. We value experience with: high-throughput sequencing; large-scale training; probabilistic modeling; neural data analysis."
   },
   {
     "id": "j044",
@@ -1257,7 +1301,8 @@
         "text": "Bachelor's degree or higher required"
       }
     ],
-    "contact_persona_id": "p14"
+    "contact_persona_id": "p14",
+    "description": "a leading technology company seeks a colleague for a industry research role in robotics. Location: Madison, WI. Master's degree or higher required. We value experience with: mentoring students; neural data analysis; experience with TensorFlow or JAX; visual recognition; fairness in ML. This is an industry research role with product impact."
   },
   {
     "id": "j045",
@@ -1281,7 +1326,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p01"
+    "contact_persona_id": "p01",
+    "description": "Northbridge University seeks a colleague for a postdoc role in computational neuroscience. Location: Boston, MA. PhD required. We value experience with: experience with TensorFlow or JAX; probabilistic modeling; deep learning frameworks such as PyTorch."
   },
   {
     "id": "j046",
@@ -1309,7 +1355,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p02"
+    "contact_persona_id": "p02",
+    "description": "Lakeview Institute of Technology seeks a colleague for a assistant professor role in computational neuroscience. Location: San Francisco, CA. PhD required. We value experience with: scientific writing; mentoring students; visual recognition; fairness in ML. Teaching and mentoring are part of the position."
   },
   {
     "id": "j047",
@@ -1341,7 +1388,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p05"
+    "contact_persona_id": "p05",
+    "description": "Cedar Hill College seeks a colleague for a lecturer role in robotics. Location: Seattle, WA. Master's degree or higher required. We value experience with: deep learning frameworks such as PyTorch; experience with TensorFlow or JAX; fairness in ML; visual recognition; large-scale training."
   },
   {
     "id": "j048",
@@ -1365,7 +1413,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p06"
+    "contact_persona_id": "p06",
+    "description": "Midwest Medical School seeks a colleague for a research scientist role in computational neuroscience. Location: Austin, TX. PhD required. We value experience with: deep learning frameworks such as PyTorch; probabilistic modeling; experience with TensorFlow or JAX."
   },
   {
     "id": "j049",
@@ -1393,7 +1442,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p13"
+    "contact_persona_id": "p13",
+    "description": "a leading technology company seeks a colleague for a industry research role in robotics. Location: Pittsburgh, PA. PhD required. We value experience with: mentoring students; visual recognition; sequential decision making; neural data analysis. This is an industry research role with product impact."
   },
   {
     "id": "j050",
@@ -1425,7 +1475,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p00"
+    "contact_persona_id": "p00",
+    "description": "Northbridge University seeks a colleague for a postdoc role in computational neuroscience. Location: Boston, MA. PhD required. We value experience with: visual recognition; mentoring students; computational linguistics; neural data analysis; fairness in ML."
   },
   {
     "id": "j051",
@@ -1449,7 +1500,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p03"
+    "contact_persona_id": "p03",
+    "description": "Lakeview Institute of Technology seeks a colleague for a assistant professor role in computational neuroscience. Location: San Francisco, CA. PhD required. We value experience with: neural data analysis; high-throughput sequencing; visual recognition. Teaching and mentoring are part of the position."
   },
   {
     "id": "j052",
@@ -1477,7 +1529,8 @@
         "text": "Bachelor's degree or higher required"
       }
     ],
-    "contact_persona_id": "p04"
+    "contact_persona_id": "p04",
+    "description": "Cedar Hill College seeks a colleague for a lecturer role in robotics. Location: Seattle, WA. Master's degree or higher required. We value experience with: experience with TensorFlow or JAX; fairness in ML; high-throughput sequencing; probabilistic modeling."
   },
   {
     "id": "j053",
@@ -1509,7 +1562,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p07"
+    "contact_persona_id": "p07",
+    "description": "Midwest Medical School seeks a colleague for a research scientist role in computational neuroscience. Location: Austin, TX. PhD required. We value experience with: high-throughput sequencing; fairness in ML; neural data analysis; deep learning frameworks such as PyTorch; experience with TensorFlow or JAX."
   },
   {
     "id": "j054",
@@ -1533,7 +1587,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p10"
+    "contact_persona_id": "p10",
+    "description": "a leading technology company seeks a colleague for a industry research role in robotics. Location: New York, NY. Master's degree or higher required. We value experience with: deep learning frameworks such as PyTorch; high-throughput sequencing; probabilistic modeling. This is an industry research role with product impact."
   },
   {
     "id": "j055",
@@ -1561,7 +1616,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p01"
+    "contact_persona_id": "p01",
+    "description": "Northbridge University seeks a colleague for a postdoc role in computational neuroscience. Location: Boston, MA. PhD required. We value experience with: experience with TensorFlow or JAX; visual recognition; large-scale training; scientific writing."
   },
   {
     "id": "j056",
@@ -1593,7 +1649,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p02"
+    "contact_persona_id": "p02",
+    "description": "Lakeview Institute of Technology seeks a colleague for a assistant professor role in computational neuroscience. Location: San Francisco, CA. PhD required. We value experience with: mentoring students; neural data analysis; computational linguistics; high-throughput sequencing; scientific writing. Teaching and mentoring are part of the position."
   },
   {
     "id": "j057",
@@ -1617,7 +1674,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p05"
+    "contact_persona_id": "p05",
+    "description": "Cedar Hill College seeks a colleague for a lecturer role in robotics. Location: Seattle, WA. Master's degree or higher required. We value experience with: sequential decision making; neural data analysis; visual recognition."
   },
   {
     "id": "j058",
@@ -1645,7 +1703,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p06"
+    "contact_persona_id": "p06",
+    "description": "Midwest Medical School seeks a colleague for a research scientist role in computational neuroscience. Location: Austin, TX. PhD required. We value experience with: experience with TensorFlow or JAX; neural data analysis; mentoring students; fairness in ML."
   },
   {
     "id": "j059",
@@ -1677,7 +1736,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p15"
+    "contact_persona_id": "p15",
+    "description": "a leading technology company seeks a colleague for a industry research role in robotics. Location: Madison, WI. Master's degree or higher required. We value experience with: deep learning frameworks such as PyTorch; large-scale training; mentoring students; fairness in ML; experience with TensorFlow or JAX. This is an industry research role with product impact."
   },
   {
     "id": "j060",
@@ -1701,7 +1761,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p00"
+    "contact_persona_id": "p00",
+    "description": "Northbridge University seeks a colleague for a postdoc role in computational neuroscience. Location: Boston, MA. PhD required. We value experience with: visual recognition; computational linguistics; high-throughput sequencing."
   },
   {
     "id": "j061",
@@ -1729,7 +1790,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p03"
+    "contact_persona_id": "p03",
+    "description": "Lakeview Institute of Technology seeks a colleague for a assistant professor role in computational neuroscience. Location: San Francisco, CA. PhD required. We value experience with: neural data analysis; fairness in ML; visual recognition; high-throughput sequencing. Teaching and mentoring are part of the position."
   },
   {
     "id": "j062",
@@ -1761,7 +1823,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p04"
+    "contact_persona_id": "p04",
+    "description": "Cedar Hill College seeks a colleague for a lecturer role in robotics. Location: Seattle, WA. Master's degree or higher required. We value experience with: deep learning frameworks such as PyTorch; computational linguistics; high-throughput sequencing; fairness in ML; scientific writing."
   },
   {
     "id": "j063",
@@ -1785,7 +1848,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p07"
+    "contact_persona_id": "p07",
+    "description": "Midwest Medical School seeks a colleague for a research scientist role in computational neuroscience. Location: Austin, TX. PhD required. We value experience with: sequential decision making; neural data analysis; fairness in ML."
   },
   {
     "id": "j064",
@@ -1813,7 +1877,8 @@
         "text": "Bachelor's degree or higher required"
       }
     ],
-    "contact_persona_id": "p12"
+    "contact_persona_id": "p12",
+    "description": "a leading technology company seeks a colleague for a industry research role in robotics. Location: Pittsburgh, PA. Master's degree or higher required. We value experience with: high-throughput sequencing; mentoring students; neural data analysis; computational linguistics. This is an industry research role with product impact."
   },
   {
     "id": "j065",
@@ -1845,7 +1910,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p01"
+    "contact_persona_id": "p01",
+    "description": "Northbridge University seeks a colleague for a postdoc role in computational neuroscience. Location: Boston, MA. PhD required. We value experience with: visual recognition; sequential decision making; fairness in ML; deep learning frameworks such as PyTorch; mentoring students."
   },
   {
     "id": "j066",
@@ -1869,7 +1935,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p02"
+    "contact_persona_id": "p02",
+    "description": "Lakeview Institute of Technology seeks a colleague for a assistant professor role in computational neuroscience. Location: San Francisco, CA. PhD required. We value experience with: fairness in ML; probabilistic modeling; deep learning frameworks such as PyTorch. Teaching and mentoring are part of the position."
   },
   {
     "id": "j067",
@@ -1897,7 +1964,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p05"
+    "contact_persona_id": "p05",
+    "description": "Cedar Hill College seeks a colleague for a lecturer role in robotics. Location: Seattle, WA. Master's degree or higher required. We value experience with: deep learning frameworks such as PyTorch; scientific writing; neural data analysis; mentoring students."
   },
   {
     "id": "j068",
@@ -1929,7 +1997,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p06"
+    "contact_persona_id": "p06",
+    "description": "Midwest Medical School seeks a colleague for a research scientist role in computational neuroscience. Location: Austin, TX. PhD required. We value experience with: mentoring students; computational linguistics; deep learning frameworks such as PyTorch; fairness in ML; experience with TensorFlow or JAX."
   },
   {
     "id": "j069",
@@ -1953,7 +2022,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p11"
+    "contact_persona_id": "p11",
+    "description": "a leading technology company seeks a colleague for a industry research role in robotics. Location: New York, NY. Master's degree or higher required. We value experience with: computational linguistics; experience with TensorFlow or JAX; scientific writing. This is an industry research role with product impact."
   },
   {
     "id": "j070",
@@ -1981,7 +2051,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p00"
+    "contact_persona_id": "p00",
+    "description": "Northbridge University seeks a colleague for a postdoc role in computational neuroscience. Location: Boston, MA. PhD required. We value experience with: experience with TensorFlow or JAX; large-scale training; visual recognition; high-throughput sequencing."
   },
   {
     "id": "j071",
@@ -2013,7 +2084,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p03"
+    "contact_persona_id": "p03",
+    "description": "Lakeview Institute of Technology seeks a colleague for a assistant professor role in computational neuroscience. Location: San Francisco, CA. PhD required. We value experience with: experience with TensorFlow or JAX; scientific writing; visual recognition; deep learning frameworks such as PyTorch; fairness in ML. Teaching and mentoring are part of the position."
   },
   {
     "id": "j072",
@@ -2037,7 +2109,8 @@
         "text": "Bachelor's degree or higher required"
       }
     ],
-    "contact_persona_id": "p04"
+    "contact_persona_id": "p04",
+    "description": "Cedar Hill College seeks a colleague for a lecturer role in robotics. Location: Seattle, WA. Master's degree or higher required. We value experience with: high-throughput sequencing; large-scale training; scientific writing."
   },
   {
     "id": "j073",
@@ -2065,7 +2138,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p07"
+    "contact_persona_id": "p07",
+    "description": "Midwest Medical School seeks a colleague for a research scientist role in computational neuroscience. Location: Austin, TX. PhD required. We value experience with: scientific writing; mentoring students; probabilistic modeling; sequential decision making."
   },
   {
     "id": "j074",
@@ -2097,7 +2171,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p14"
+    "contact_persona_id": "p14",
+    "description": "a leading technology company seeks a colleague for a industry research role in robotics. Location: Madison, WI. Master's degree or higher required. We value experience with: visual recognition; large-scale training; probabilistic modeling; fairness in ML; sequential decision making. This is an industry research role with product impact."
   },
   {
     "id": "j075",
@@ -2121,7 +2196,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p01"
+    "contact_persona_id": "p01",
+    "description": "Northbridge University seeks a colleague for a postdoc role in computational neuroscience. Location: Boston, MA. PhD required. We value experience with: high-throughput sequencing; computational linguistics; sequential decision making."
   },
   {
     "id": "j076",
@@ -2149,7 +2225,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p02"
+    "contact_persona_id": "p02",
+    "description": "Lakeview Institute of Technology seeks a colleague for a assistant professor role in computational neuroscience. Location: San Francisco, CA. PhD required. We value experience with: neural data analysis; probabilistic modeling; experience with TensorFlow or JAX; deep learning frameworks such as PyTorch. Teaching and mentoring are part of the position."
   },
   {
     "id": "j077",
@@ -2181,7 +2258,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p05"
+    "contact_persona_id": "p05",
+    "description": "Cedar Hill College seeks a colleague for a lecturer role in robotics. Location: Seattle, WA. PhD required. We value experience with: neural data analysis; scientific writing; large-scale training; experience with TensorFlow or JAX; mentoring students."
   },
   {
     "id": "j078",
@@ -2205,7 +2283,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p06"
+    "contact_persona_id": "p06",
+    "description": "Midwest Medical School seeks a colleague for a research scientist role in computational neuroscience. Location: Austin, TX. PhD required. We value experience with: mentoring students; visual recognition; fairness in ML."
   },
   {
     "id": "j079",
@@ -2233,7 +2312,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p13"
+    "contact_persona_id": "p13",
+    "description": "a leading technology company seeks a colleague for a industry research role in robotics. Location: Pittsburgh, PA. Master's degree or higher required. We value experience with: sequential decision making; computational linguistics; probabilistic modeling; experience with TensorFlow or JAX. This is an industry research role with product impact."
   },
   {
     "id": "j080",
@@ -2265,7 +2345,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p00"
+    "contact_persona_id": "p00",
+    "description": "Northbridge University seeks a colleague for a postdoc role in computational neuroscience. Location: Boston, MA. PhD required. We value experience with: visual recognition; probabilistic modeling; sequential decision making; computational linguistics; neural data analysis."
   },
   {
     "id": "j081",
@@ -2289,7 +2370,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p03"
+    "contact_persona_id": "p03",
+    "description": "Lakeview Institute of Technology seeks a colleague for a assistant professor role in computational neuroscience. Location: San Francisco, CA. PhD required. We value experience with: mentoring students; sequential decision making; scientific writing. Teaching and mentoring are part of the position."
   },
   {
     "id": "j082",
@@ -2317,7 +2399,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p04"
+    "contact_persona_id": "p04",
+    "description": "Cedar Hill College seeks a colleague for a lecturer role in robotics. Location: Seattle, WA. Master's degree or higher required. We value experience with: large-scale training; mentoring students; deep learning frameworks such as PyTorch; fairness in ML."
   },
   {
     "id": "j083",
@@ -2349,7 +2432,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p07"
+    "contact_persona_id": "p07",
+    "description": "Midwest Medical School seeks a colleague for a research scientist role in computational neuroscience. Location: Austin, TX. PhD required. We value experience with: sequential decision making; large-scale training; experience with TensorFlow or JAX; computational linguistics; fairness in ML."
   },
   {
     "id": "j084",
@@ -2373,7 +2457,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p10"
+    "contact_persona_id": "p10",
+    "description": "a leading technology company seeks a colleague for a industry research role in robotics. Location: New York, NY. PhD required. We value experience with: experience with TensorFlow or JAX; fairness in ML; mentoring students. This is an industry research role with product impact."
   },
   {
     "id": "j085",
@@ -2401,7 +2486,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p01"
+    "contact_persona_id": "p01",
+    "description": "Northbridge University seeks a colleague for a postdoc role in computational neuroscience. Location: Boston, MA. PhD required. We value experience with: computational linguistics; sequential decision making; large-scale training; visual recognition."
   },
   {
     "id": "j086",
@@ -2433,7 +2519,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p02"
+    "contact_persona_id": "p02",
+    "description": "Lakeview Institute of Technology seeks a colleague for a assistant professor role in computational neuroscience. Location: San Francisco, CA. PhD required. We value experience with: fairness in ML; probabilistic modeling; visual recognition; sequential decision making; neural data analysis. Teaching and mentoring are part of the position."
   },
   {
     "id": "j087",
@@ -2457,7 +2544,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p05"
+    "contact_persona_id": "p05",
+    "description": "Cedar Hill College seeks a colleague for a lecturer role in robotics. Location: Seattle, WA. Master's degree or higher required. We value experience with: sequential decision making; deep learning frameworks such as PyTorch; experience with TensorFlow or JAX."
   },
   {
     "id": "j088",
@@ -2485,7 +2573,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p06"
+    "contact_persona_id": "p06",
+    "description": "Midwest Medical School seeks a colleague for a research scientist role in computational neuroscience. Location: Austin, TX. PhD required. We value experience with: large-scale training; high-throughput sequencing; sequential decision making; deep learning frameworks such as PyTorch."
   },
   {
     "id": "j089",
@@ -2517,7 +2606,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p15"
+    "contact_persona_id": "p15",
+    "description": "a leading technology company seeks a colleague for a industry research role in robotics. Location: Madison, WI. Master's degree or higher required. We value experience with: deep learning frameworks such as PyTorch; probabilistic modeling; computational linguistics; sequential decision making; scientific writing. This is an industry research role with product impact."
   },
   {
     "id": "j090",
@@ -2541,7 +2631,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p00"
+    "contact_persona_id": "p00",
+    "description": "Northbridge University seeks a colleague for a postdoc role in computational neuroscience. Location: Boston, MA. PhD required. We value experience with: fairness in ML; neural data analysis; mentoring students."
   },
   {
     "id": "j091",
@@ -2569,7 +2660,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p03"
+    "contact_persona_id": "p03",
+    "description": "Lakeview Institute of Technology seeks a colleague for a assistant professor role in computational neuroscience. Location: San Francisco, CA. PhD required. We value experience with: fairness in ML; high-throughput sequencing; mentoring students; deep learning frameworks such as PyTorch. Teaching and mentoring are part of the position."
   },
   {
     "id": "j092",
@@ -2601,7 +2693,8 @@
         "text": "Bachelor's degree or higher required"
       }
     ],
-    "contact_persona_id": "p04"
+    "contact_persona_id": "p04",
+    "description": "Cedar Hill College seeks a colleague for a lecturer role in robotics. Location: Seattle, WA. Master's degree or higher required. We value experience with: experience with TensorFlow or JAX; fairness in ML; computational linguistics; mentoring students; deep learning frameworks such as PyTorch."
   },
   {
     "id": "j093",
@@ -2625,7 +2718,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p07"
+    "contact_persona_id": "p07",
+    "description": "Midwest Medical School seeks a colleague for a research scientist role in computational neuroscience. Location: Austin, TX. PhD required. We value experience with: probabilistic modeling; scientific writing; mentoring students."
   },
   {
     "id": "j094",
@@ -2653,7 +2747,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p12"
+    "contact_persona_id": "p12",
+    "description": "a leading technology company seeks a colleague for a industry research role in robotics. Location: Pittsburgh, PA. Master's degree or higher required. We value experience with: computational linguistics; high-throughput sequencing; fairness in ML; deep learning frameworks such as PyTorch. This is an industry research role with product impact."
   },
   {
     "id": "j095",
@@ -2685,7 +2780,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p01"
+    "contact_persona_id": "p01",
+    "description": "Northbridge University seeks a colleague for a postdoc role in computational neuroscience. Location: Boston, MA. PhD required. We value experience with: sequential decision making; probabilistic modeling; deep learning frameworks such as PyTorch; large-scale training; visual recognition."
   },
   {
     "id": "j096",
@@ -2709,7 +2805,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p02"
+    "contact_persona_id": "p02",
+    "description": "Lakeview Institute of Technology seeks a colleague for a assistant professor role in computational neuroscience. Location: San Francisco, CA. PhD required. We value experience with: large-scale training; visual recognition; experience with TensorFlow or JAX. Teaching and mentoring are part of the position."
   },
   {
     "id": "j097",
@@ -2737,7 +2834,8 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p05"
+    "contact_persona_id": "p05",
+    "description": "Cedar Hill College seeks a colleague for a lecturer role in robotics. Location: Seattle, WA. Master's degree or higher required. We value experience with: probabilistic modeling; mentoring students; high-throughput sequencing; computational linguistics."
   },
   {
     "id": "j098",
@@ -2769,7 +2867,8 @@
         "text": "Doctoral degree required"
       }
     ],
-    "contact_persona_id": "p06"
+    "contact_persona_id": "p06",
+    "description": "Midwest Medical School seeks a colleague for a research scientist role in computational neuroscience. Location: Austin, TX. PhD required. We value experience with: visual recognition; computational linguistics; large-scale training; high-throughput sequencing; deep learning frameworks such as PyTorch."
   },
   {
     "id": "j099",
@@ -2793,6 +2892,7 @@
         "text": "Master's degree or higher required"
       }
     ],
-    "contact_persona_id": "p11"
+    "contact_persona_id": "p11",
+    "description": "a leading technology company seeks a colleague for a industry research role in robotics. Location: New York, NY. Master's degree or higher required. We value experience with: computational linguistics; probabilistic modeling; high-throughput sequencing. This is an industry research role with product impact."
   }
 ]
