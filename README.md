@@ -18,6 +18,8 @@ Career Coach writes LinkedIn outreach for a new-grad candidate and improves itse
 
 Live frontend: **https://career-coach-three-theta.vercel.app** (it calls the backend at `NEXT_PUBLIC_API_URL`, default `http://localhost:8000`, so start the backend locally first).
 
+A saved run is in docs/demo-run.json
+
 ```bash
 git clone https://github.com/adi05b/bob-academic-coach.git && cd bob-academic-coach
 ```

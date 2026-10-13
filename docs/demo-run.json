@@ -1,0 +1,726 @@
+{
+  "id": "a7bcdb4bf0e1",
+  "candidate_id": "c00",
+  "job_id": "j085",
+  "train_persona_ids": [
+    "p02",
+    "p03",
+    "p04",
+    "p06",
+    "p07",
+    "p08",
+    "p09",
+    "p10",
+    "p11",
+    "p12",
+    "p13",
+    "p14",
+    "p15"
+  ],
+  "test_persona_ids": [
+    "p00",
+    "p01",
+    "p05"
+  ],
+  "iterations": [
+    {
+      "n": 1,
+      "prompt": "# Outreach generator v0\n\nWrite a professional networking message for this candidate.\n\nHard rules:\n- Under 300 characters (LinkedIn connection-note limit).\n- Cite only the candidate's resume lines. Never claim a skill, tool, number, or employer that is not in them.\n- Output JSON only: {\"text\": \"<message>\", \"citations\": [\"R1\", ...]}\n",
+      "message": {
+        "text": "Hi Quinn, I'm reaching out about a Postdoctoral Fellow role in computational neuroscience at Northbridge University. Ava has a B.S. in Computer Science from Northbridge with research in reinforcement learning and computer vision—strong fit for the position's focus areas.",
+        "chars": 271,
+        "job_id": "j085",
+        "persona_id": "p01",
+        "citations": [
+          "R1",
+          "R2",
+          "R3",
+          "R6",
+          "R5"
+        ]
+      },
+      "lint": {
+        "passed": true,
+        "offending": []
+      },
+      "evals": [
+        {
+          "persona_id": "p02",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 1,
+            "clear_ask": 0
+          },
+          "quality_score": 0.1,
+          "reply": "",
+          "critique": "This is exactly what I'm put off by—a third-party recruiter intro with no technical detail. I need to know what specific methods Ava used in their RL research, what metrics they achieved, what computational neuroscience problems they've actually tackled, and why they're interested in *our* specific work. Generic credential listing tells me nothing about research taste or technical depth."
+        },
+        {
+          "persona_id": "p03",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 1,
+            "concise": 2,
+            "clear_ask": 0
+          },
+          "quality_score": 0.3,
+          "reply": "",
+          "critique": "This is a third-party recruiter intro with no technical details about Ava's actual work, and I'm an engineer at Lakeview—not affiliated with Northbridge University or hiring postdocs. The sender confused my role and institution entirely, making this completely irrelevant to me."
+        },
+        {
+          "persona_id": "p04",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 1,
+            "concise": 2,
+            "clear_ask": 0
+          },
+          "quality_score": 0.3,
+          "reply": "",
+          "critique": "This is a classic third-party recruiter approach with no technical depth—I'm an Engineer at Cedar Hill College, not 'Quinn' at Northbridge University, and I don't hire postdocs in computational neuroscience. If this were actually relevant to my role, I'd need specific details about what Ava built, metrics achieved, and why they're interested in our engineering team's actual work, not generic background credentials."
+        },
+        {
+          "persona_id": "p06",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 1,
+            "concise": 2,
+            "clear_ask": 0
+          },
+          "quality_score": 0.3,
+          "reply": "",
+          "critique": "This message was sent to the wrong person—I'm Parker Laurent at Midwest Medical School, not Quinn at Northbridge University. Even if correctly addressed, it reads like a third-party referral without explaining who's writing or what they want from me specifically."
+        },
+        {
+          "persona_id": "p07",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 1,
+            "specificity": 1,
+            "concise": 2,
+            "clear_ask": 0
+          },
+          "quality_score": 0.4,
+          "reply": "",
+          "critique": "This message got basic facts wrong—I'm Reese Shah at Midwest Medical School, not Quinn at Northbridge University. Also, referring to yourself in third person ('Ava has...') is confusing and unprofessional. Address me correctly, use first person, mention location/work authorization, and make a clear ask like requesting to discuss the role."
+        },
+        {
+          "persona_id": "p08",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 1,
+            "concise": 2,
+            "clear_ask": 0
+          },
+          "quality_score": 0.3,
+          "reply": "",
+          "critique": "This message was sent to the wrong person—I'm Finley Walsh at Bay Area Research Lab, not Quinn at Northbridge University. Also, referring to yourself in third person ('Ava has...') is confusing and unprofessional. Address the right recruiter, use 'I' statements, mention my actual role, and include your location/work authorization status."
+        },
+        {
+          "persona_id": "p09",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 1,
+            "specificity": 0,
+            "concise": 2,
+            "clear_ask": 0
+          },
+          "quality_score": 0.3,
+          "reply": "",
+          "critique": "This is a third-party recruiter intro with zero technical substance. I'd respond if Ava herself reached out describing a specific computational neuroscience research question she's excited about, citing a particular paper from our lab, or showing how her RL/vision work connects to neural coding or systems neuroscience—not just listing degree credentials."
+        },
+        {
+          "persona_id": "p10",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 2,
+            "clear_ask": 0
+          },
+          "quality_score": 0.2,
+          "reply": "",
+          "critique": "This is exactly what I'm put off by: a third-party recruiter intro with no technical detail. I work at Harbor Machine Learning as an engineer—why are you messaging me about a postdoc at Northbridge University? Wrong person, wrong role, and zero technical substance about methods, metrics, or actual research contributions that would demonstrate taste."
+        },
+        {
+          "persona_id": "p11",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 1,
+            "concise": 2,
+            "clear_ask": 0
+          },
+          "quality_score": 0.3,
+          "reply": "",
+          "critique": "This appears to be a third-party recruiter message with no technical detail, which I find off-putting. The sender confused my name (I'm Sawyer, not Quinn), is discussing a postdoc role in computational neuroscience when I'm an ML engineer at Harbor Machine Learning (completely unrelated field and company), and provided zero information about actual technical work, metrics, or why this person would fit our team. If someone wants to reach me, they should know who I am, what company I work for, mention specific projects or technical contributions, and explain why we should talk."
+        },
+        {
+          "persona_id": "p12",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 1,
+            "concise": 2,
+            "clear_ask": 0
+          },
+          "quality_score": 0.3,
+          "reply": "",
+          "critique": "This appears to be a third-party recruiter pitch with no technical detail about actual research contributions or metrics. I'm an engineer at Lumen Bioworks, not involved in university postdoc hiring—wrong person entirely. Also, speaking about 'Ava' in third person suggests recruiter spam, which I ignore."
+        },
+        {
+          "persona_id": "p13",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 1,
+            "concise": 2,
+            "clear_ask": 0
+          },
+          "quality_score": 0.3,
+          "reply": "",
+          "critique": "This message was sent to the wrong person—I'm Blake Singh at Lumen Bioworks, not Quinn at Northbridge University. Also, referring to yourself in third person ('Ava has...') is confusing and unprofessional; either write as yourself or clarify you're recommending someone else."
+        },
+        {
+          "persona_id": "p14",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 1,
+            "concise": 2,
+            "clear_ask": 0
+          },
+          "quality_score": 0.3,
+          "reply": "",
+          "critique": "This message is completely misdirected—I'm Drew Moreau, CEO at Northwind Robotics, not Quinn at an academic institution, and we don't have postdoctoral positions. Also, referring to yourself in third person ('Ava has...') is confusing and unprofessional; either write as yourself or clarify you're reaching out on someone else's behalf."
+        },
+        {
+          "persona_id": "p15",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 1,
+            "specificity": 1,
+            "concise": 2,
+            "clear_ask": 0
+          },
+          "quality_score": 0.4,
+          "reply": "",
+          "critique": "This message has multiple red flags: wrong name (Quinn vs Jules), wrong company (Northbridge University vs Northwind Robotics), wrong role type (postdoc vs our robotics roles), and refers to 'Ava' in third person making it unclear who's actually applying. This is clearly a mass-template mistake that wasn't even proofread. A personalized message with the correct details, written in first person, showing you actually researched our company would get my attention."
+        }
+      ],
+      "score": 0.146
+    },
+    {
+      "n": 2,
+      "prompt": "# Outreach generator v1\n\nYou are the candidate writing a first-person networking message to a specific recipient.\n\n## Hard rules (violating ANY rule = failed output):\n1. Under 300 characters total (LinkedIn connection-note limit)\n2. Cite only the candidate's resume lines. Never claim a skill, tool, number, employer, or project that is not explicitly in them\n3. Output JSON only: {\"text\": \"<message>\", \"citations\": [\"R1\", ...]}\n4. Write in first person (\"I\") as the candidate, never third person\n5. Address the recipient by their actual name from the recipient context\n6. Reference the recipient's actual company/institution from the recipient context\n7. Only contact recipients whose role/institution actually matches the candidate's goal\n\n## Required content checks:\n- Verify recipient name matches exactly before generating\n- Verify recipient company/institution matches the opportunity before generating  \n- If recipient role/company is unrelated to candidate's target role, output: {\"text\": \"SKIP - recipient mismatch\", \"citations\": []}\n- Use first person only: \"I have experience in X\" not \"Ava has experience in X\"\n\n## Technical depth requirements (choose 1-2 to fit character limit):\n- Name specific methods/algorithms from resume lines (e.g., \"policy gradient methods\" not \"reinforcement learning\")\n- Include quantitative results if in resume (e.g., \"improved accuracy by 15%\")\n- Reference specific technical problems solved, not just field names\n- Mention specific tools/frameworks by name if listed in resume\n\n## Structure:\n1. Greeting with correct recipient name (5-10 chars)\n2. One concrete technical detail with specificity (80-120 chars)\n3. Brief connection to recipient's actual work/role (50-80 chars)\n4. Simple ask or interest statement (40-60 chars)\n\n## What NOT to do:\n- Never use recipient template variables that could be wrong (like \"Quinn\")\n- Never mention roles/institutions the recipient doesn't work at\n- Never write as if you're a third-party recruiter introducing someone\n- Never use generic credential-listing without technical specifics",
+      "message": {
+        "text": "SKIP - recipient mismatch",
+        "chars": 25,
+        "job_id": "j085",
+        "persona_id": "p01",
+        "citations": []
+      },
+      "lint": {
+        "passed": false,
+        "offending": [
+          "SKIP"
+        ]
+      },
+      "evals": [
+        {
+          "persona_id": "p02",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message was not intended for me - it appears to be a system error or misdirected outreach. Always verify you're contacting the right person for the right role at the right organization before sending."
+        },
+        {
+          "persona_id": "p03",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message wasn't intended for me - it appears to be a system message indicating the sender targeted the wrong person. A properly targeted message showing familiarity with my work in computational systems at Lakeview and specific technical questions about the postdoc role would have gotten my attention."
+        },
+        {
+          "persona_id": "p04",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message wasn't intended for me - it was sent to the wrong recipient. Always verify you're reaching out to the right person for the specific role you're targeting."
+        },
+        {
+          "persona_id": "p06",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message was not intended for me. When reaching out on LinkedIn, always verify you're contacting the right person for the right role at the right organization."
+        },
+        {
+          "persona_id": "p07",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message was not intended for me - it appears to be a system message indicating a recipient mismatch. No action needed on my part."
+        },
+        {
+          "persona_id": "p08",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message wasn't intended for me, so I wouldn't respond. When reaching out, candidates should ensure they're contacting the right person for the role they're interested in."
+        },
+        {
+          "persona_id": "p09",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message wasn't intended for me - it appears to be a routing error or test case. A properly targeted message would reference my specific work in computational methods or projects at Bay Area Research Lab."
+        },
+        {
+          "persona_id": "p10",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message wasn't intended for me - it's for a computational neuroscience postdoc role, but I'm an engineer at a machine learning company. The sender should verify recipient roles match their target position before reaching out."
+        },
+        {
+          "persona_id": "p11",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message was not intended for me—it references a postdoctoral computational neuroscience role, but I'm an engineer at a machine learning company focused on practical applications, not academic research positions. Always verify the recipient matches the role you're inquiring about."
+        },
+        {
+          "persona_id": "p12",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message was not intended for me - it appears to be a system message indicating the sender skipped contacting me because I'm not the right recipient for their outreach. No action needed on my part."
+        },
+        {
+          "persona_id": "p13",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message was not intended for me. When reaching out, candidates should ensure they're contacting the right person for the role they're interested in."
+        },
+        {
+          "persona_id": "p14",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message was sent to the wrong person - I'm a CEO at a robotics company, not involved in postdoctoral computational neuroscience recruitment. Research your recipient's actual role and company before reaching out."
+        },
+        {
+          "persona_id": "p15",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message was not intended for me - it appears to be a system message indicating the recipient doesn't match the role. No action needed on my part."
+        }
+      ],
+      "score": 0.0
+    },
+    {
+      "n": 3,
+      "prompt": "# Outreach generator v2\n\nYou are the candidate writing a first-person networking message to a specific recipient.\n\n## Hard rules (violating ANY rule = failed output):\n1. Under 300 characters total (LinkedIn connection-note limit)\n2. Cite only the candidate's resume lines. Never claim a skill, tool, number, employer, or project that is not explicitly in them\n3. Output JSON only: {\"text\": \"<message>\", \"citations\": [\"R1\", ...]}\n4. Write in first person (\"I\") as the candidate, never third person\n5. Address the recipient by their actual name from the recipient context\n6. Reference the recipient's actual company/institution from the recipient context\n7. Only contact recipients whose role/institution actually matches the candidate's goal\n\n## Recipient matching requirements (CHECK FIRST):\n- If recipient role is NOT faculty, postdoc coordinator, lab PI, research scientist, or academic hiring manager: output {\"text\": \"SKIP - recipient mismatch\", \"citations\": []}\n- If recipient institution/company is NOT a university, research institute, or academic lab: output {\"text\": \"SKIP - recipient mismatch\", \"citations\": []}\n- If recipient works at a commercial company (e.g., robotics company, ML startup, tech firm) instead of academic institution: output {\"text\": \"SKIP - recipient mismatch\", \"citations\": []}\n- If recipient is CEO, engineer, product manager, or other non-academic role: output {\"text\": \"SKIP - recipient mismatch\", \"citations\": []}\n- NEVER send the literal text \"SKIP - recipient mismatch\" to actual recipients\n- The SKIP output is ONLY for internal filtering - it should NEVER appear in a real LinkedIn message\n- When you output SKIP, the system will NOT send anything to that recipient - they will receive nothing\n\n## When recipient DOES match (academic role at research institution):\nGenerate a real outreach message following all other requirements below.\n\n## Technical depth requirements (choose 1-2 to fit character limit):\n- Name specific methods/algorithms from resume lines (e.g., \"policy gradient methods\" not \"reinforcement learning\")\n- Include quantitative results if in resume (e.g., \"improved accuracy by 15%\")\n- Reference specific technical problems solved, not just field names\n- Mention specific tools/frameworks by name if listed in resume\n\n## Structure:\n1. Greeting with correct recipient name (5-10 chars)\n2. One concrete technical detail with specificity (80-120 chars)\n3. Brief connection to recipient's actual work/role (50-80 chars)\n4. Simple ask or interest statement (40-60 chars)\n\n## What NOT to do:\n- Never use recipient template variables that could be wrong\n- Never mention roles/institutions the recipient doesn't work at\n- Never write as if you're a third-party recruiter introducing someone\n- Never use generic credential-listing without technical specifics\n- Never send system messages to real people\n- Never mention SKIP: not in the candidate's resume lines.",
+      "message": {
+        "text": "SKIP - recipient mismatch",
+        "chars": 25,
+        "job_id": "j085",
+        "persona_id": "p01",
+        "citations": []
+      },
+      "lint": {
+        "passed": false,
+        "offending": [
+          "SKIP"
+        ]
+      },
+      "evals": [
+        {
+          "persona_id": "p02",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message wasn't intended for me - it appears to be a system error or misdirected outreach. Even if it were a real message, I'd need to see specific technical details about computational methods, neuroscience modeling approaches, or relevant research experience that aligns with our postdoc work."
+        },
+        {
+          "persona_id": "p03",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message wasn't intended for me - it appears to be a system error or misdirected outreach. Always verify the recipient matches the role and company before sending."
+        },
+        {
+          "persona_id": "p04",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message wasn't intended for me - it appears to be a system notification about a recipient mismatch. No action needed on my part."
+        },
+        {
+          "persona_id": "p06",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message was not intended for me - it appears to be a system message indicating a recipient mismatch. No action needed."
+        },
+        {
+          "persona_id": "p07",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message wasn't intended for me—it appears to be a system message indicating the recipient doesn't match the role. A proper message should be personalized to the right recruiter and position."
+        },
+        {
+          "persona_id": "p08",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message wasn't intended for me, so I wouldn't respond. When reaching out, candidates should verify they're contacting the right person for the role and personalize their message accordingly."
+        },
+        {
+          "persona_id": "p09",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message wasn't intended for me - it appears to be a routing error or test case. A properly targeted message would reference my actual work in computational methods or specific projects at Bay Area Research Lab."
+        },
+        {
+          "persona_id": "p10",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message wasn't intended for me - it's about a postdoctoral computational neuroscience position, but I'm an engineer at a machine learning company, not in academia or neuroscience research. Sender should verify recipient relevance before reaching out."
+        },
+        {
+          "persona_id": "p11",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message was not intended for me—it's about a computational neuroscience postdoc, but I'm an engineer at Harbor Machine Learning working on applied ML systems. The sender should verify recipient roles match the position they're inquiring about before reaching out."
+        },
+        {
+          "persona_id": "p12",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message wasn't intended for me - it appears to be a system message indicating the recipient doesn't match the role. No action needed on my part."
+        },
+        {
+          "persona_id": "p13",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message was not intended for me - it appears to be a recipient mismatch. When reaching out, always verify you're contacting the right person at the right organization for the specific role you're interested in."
+        },
+        {
+          "persona_id": "p14",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message was not intended for me—it appears to be a system error or misdirected outreach. Always verify you're contacting the right person for the right role at the right company before sending."
+        },
+        {
+          "persona_id": "p15",
+          "outcome": "no_response",
+          "outcome_reward": 0.0,
+          "quality": {
+            "relevance": 0,
+            "specificity": 0,
+            "concise": 0,
+            "clear_ask": 0
+          },
+          "quality_score": 0.0,
+          "reply": "",
+          "critique": "This message wasn't intended for me - it appears to be a system message indicating the candidate sent their message to the wrong person. They should verify they're contacting the right recruiter for roles that match both the position type and their background before reaching out."
+        }
+      ],
+      "score": 0.0
+    }
+  ],
+  "best_n": 1,
+  "baseline_test": [
+    {
+      "persona_id": "p00",
+      "outcome": "no_response",
+      "outcome_reward": 0.0,
+      "quality": {
+        "relevance": 1,
+        "specificity": 1,
+        "concise": 2,
+        "clear_ask": 0
+      },
+      "quality_score": 0.4,
+      "reply": "",
+      "critique": "This reads like a third-person template and doesn't address me by the right name (I'm Riley, not Quinn). Who is Ava? Are you Ava? If you're reaching out on someone else's behalf, explain your relationship and why they can't message directly. Also missing: location, work authorization status, and any actual neuroscience background—computer science alone isn't enough for a computational neuroscience postdoc."
+    },
+    {
+      "persona_id": "p01",
+      "outcome": "no_response",
+      "outcome_reward": 0.0,
+      "quality": {
+        "relevance": 1,
+        "specificity": 0,
+        "concise": 2,
+        "clear_ask": 0
+      },
+      "quality_score": 0.3,
+      "reply": "",
+      "critique": "This is clearly a third-party recruiter intro with zero technical detail—exactly what I ignore. If Ava actually did relevant research, she should message me directly explaining what specific computational neuroscience problem she worked on, what methods she used, and why our lab's work interests her. Generic keywords like 'reinforcement learning' without concrete projects or metrics tell me nothing about research taste or technical depth."
+    },
+    {
+      "persona_id": "p05",
+      "outcome": "no_response",
+      "outcome_reward": 0.0,
+      "quality": {
+        "relevance": 0,
+        "specificity": 1,
+        "concise": 2,
+        "clear_ask": 0
+      },
+      "quality_score": 0.3,
+      "reply": "",
+      "critique": "This message was sent to the wrong person entirely—I'm Avery Okeke at Cedar Hill College, not Quinn at Northbridge University. Even if correctly addressed, referring to yourself in third person ('Ava has...') is confusing, and there's no clear ask or connection to why you're reaching out to me specifically."
+    }
+  ],
+  "optimized_test": [
+    {
+      "persona_id": "p00",
+      "outcome": "no_response",
+      "outcome_reward": 0.0,
+      "quality": {
+        "relevance": 1,
+        "specificity": 1,
+        "concise": 2,
+        "clear_ask": 0
+      },
+      "quality_score": 0.4,
+      "reply": "",
+      "critique": "This reads like a third-person template with wrong recruiter name (I'm Riley, not Quinn). Should be first-person ('I have a B.S...'), mention location/work authorization, explain why Ava wants this specific postdoc role, and include a clear ask like requesting to discuss or submit materials."
+    },
+    {
+      "persona_id": "p01",
+      "outcome": "no_response",
+      "outcome_reward": 0.0,
+      "quality": {
+        "relevance": 1,
+        "specificity": 0,
+        "concise": 2,
+        "clear_ask": 0
+      },
+      "quality_score": 0.3,
+      "reply": "",
+      "critique": "This is exactly the third-party recruiter intro I ignore—no technical detail about Ava's actual research, no specific methods or papers, just buzzwords like 'reinforcement learning' and 'computer vision.' If Ava did the work, she should reach out directly with specifics: what computational neuroscience question interests her, what modeling approaches she's used, maybe a relevant paper or metric from her research."
+    },
+    {
+      "persona_id": "p05",
+      "outcome": "no_response",
+      "outcome_reward": 0.0,
+      "quality": {
+        "relevance": 0,
+        "specificity": 1,
+        "concise": 2,
+        "clear_ask": 0
+      },
+      "quality_score": 0.3,
+      "reply": "",
+      "critique": "This message was sent to the wrong person—I'm Avery Okeke at Cedar Hill College, not Quinn at Northbridge University. Also, referring to yourself in third person ('Ava has...') is confusing. Address the right person at the right institution and write from your own perspective."
+    }
+  ]
+}
