@@ -56,3 +56,10 @@ Handoff for Agents C and D: [DATA_CONTRACT.md](DATA_CONTRACT.md). Legacy sample 
 ### Agent D: RSI prototype (`agent_d/`)
 
 Workshop-style `tailor_resume` program evolution (separate from the backend outreach-prompt RSI). Run `python agent_d/run_rsi.py --baseline-only` from the repo root.
+
+### Agent C: grounded career intelligence (`career_coach/`)
+
+Independent PDF/text parsing, explainable matching, and a reusable local outreach
+generator with candidate claim provenance. Run `python -m career_coach demo` for
+the explicitly temporary smoke-test fixture. See [Agent C's integration notes](docs/AGENT_C_HANDOFF.md)
+for Python/JSON interfaces and adapters for the shared backend and B's dataset.
