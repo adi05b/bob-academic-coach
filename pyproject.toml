@@ -16,4 +16,4 @@ dev = ["pytest>=7.0"]
 include = ["data*", "agent_d*"]
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+testpaths = ["tests", "backend/tests"]
