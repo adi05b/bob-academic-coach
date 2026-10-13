@@ -24,8 +24,12 @@ if MOCK:
     print("[career-coach] mock mode: no OPENROUTER_API_KEY, serving fixtures from backend/mock/")
 
 
-def complete(system: str, user: str, skill_tag: str) -> str:
-    if MOCK:
+def complete(system: str, user: str, skill_tag: str, *, use_mock: bool | None = None) -> str:
+    """`use_mock` overrides env: True = fixtures, False = OpenRouter, None = default (no key → mock)."""
+    mock = MOCK if use_mock is None else use_mock
+    if not mock and not API_KEY:
+        raise RuntimeError("Live LLM requested but OPENROUTER_API_KEY is not set.")
+    if mock:
         return _mock(system, user, skill_tag)
     r = httpx.post(
         "https://openrouter.ai/api/v1/chat/completions",

@@ -29,7 +29,8 @@ const btn =
 const btnGhost = "rounded-lg px-3 py-2 text-sm border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/10";
 
 export default function Home() {
-  const [health, setHealth] = useState<{ mock: boolean; model: string } | null>(null);
+  const [health, setHealth] = useState<{ mock: boolean; model: string; can_live?: boolean } | null>(null);
+  const [rsiMock, setRsiMock] = useState(true);
   const [jobs, setJobs] = useState<Job[]>([]);
   const [personas, setPersonas] = useState<Persona[]>([]);
   const [resumeText, setResumeText] = useState("");
@@ -49,6 +50,7 @@ export default function Home() {
     Promise.all([api<typeof health>("/health"), api<Job[]>("/jobs"), api<Persona[]>("/personas")])
       .then(([h, j, p]) => {
         setHealth(h);
+        setRsiMock(h?.mock ?? true);
         setJobs(j);
         setPersonas(p);
         setCatalogReady(j.length > 0 && p.length > 0);
@@ -109,7 +111,7 @@ export default function Home() {
       const r = await fetch(API + "/run/stream", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ candidate, job_id: jobId, n }),
+        body: JSON.stringify({ candidate, job_id: jobId, n, use_mock: rsiMock }),
       });
       if (!r.ok || !r.body) throw new Error(`${r.status}: ${await r.text()}`);
       const reader = r.body.getReader();
@@ -273,21 +275,57 @@ export default function Home() {
             {jobById[jobId]?.title} · {jobById[jobId]?.company}
             {contact && ` — to ${contact.name}, ${contact.role} at ${contact.company}`}
           </span>
-          <label className="text-sm ml-auto">
-            Iterations{" "}
-            <select
-              className="rounded border border-black/15 dark:border-white/20 bg-transparent px-1 py-1"
-              value={n}
-              onChange={(e) => setN(Number(e.target.value))}
+          <div className="flex flex-wrap items-center gap-2 ml-auto">
+            <span className="text-xs text-neutral-500">RSI mode</span>
+            <div
+              className="inline-flex rounded-lg border border-black/15 dark:border-white/20 p-0.5"
+              role="group"
+              aria-label="RSI mode"
             >
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((k) => (
-                <option key={k}>{k}</option>
-              ))}
-            </select>
-          </label>
-          <button className={btn} disabled={!!loading} onClick={startRun}>
-            Run
-          </button>
+              <button
+                type="button"
+                className={`rounded-md px-2.5 py-1 text-xs font-medium ${rsiMock ? "bg-foreground text-background" : btnGhost + " border-0"}`}
+                disabled={!!loading}
+                onClick={() => setRsiMock(true)}
+              >
+                Mock
+              </button>
+              <button
+                type="button"
+                className={`rounded-md px-2.5 py-1 text-xs font-medium ${!rsiMock ? "bg-foreground text-background" : btnGhost + " border-0"}`}
+                disabled={!!loading || health?.can_live === false}
+                title={health?.can_live === false ? "Set OPENROUTER_API_KEY in backend .env for live RSI" : undefined}
+                onClick={() => setRsiMock(false)}
+              >
+                Live
+              </button>
+            </div>
+            <label className="text-sm">
+              Iterations{" "}
+              <select
+                className="rounded border border-black/15 dark:border-white/20 bg-transparent px-1 py-1"
+                value={n}
+                onChange={(e) => setN(Number(e.target.value))}
+              >
+                {[1, 2, 3, 4, 5, 6, 7, 8].map((k) => (
+                  <option key={k}>{k}</option>
+                ))}
+              </select>
+            </label>
+            <button className={btn} disabled={!!loading || (!rsiMock && health?.can_live === false)} onClick={startRun}>
+              Run
+            </button>
+          </div>
+          {!rsiMock && (
+            <p className="w-full text-xs text-neutral-500">
+              Live RSI calls OpenRouter ({health?.model ?? "LLM"}). Expect several minutes for {n} iterations.
+            </p>
+          )}
+          {rsiMock && (
+            <p className="w-full text-xs text-neutral-500">
+              Mock RSI uses scripted fixtures (fast demo). Jobs, resume, and lint are still real.
+            </p>
+          )}
         </section>
       )}
 

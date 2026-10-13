@@ -34,11 +34,18 @@ class RunBody(BaseModel):
     candidate: Candidate
     job_id: str
     n: int = Field(4, ge=1, le=8)
+    use_mock: bool | None = None  # None → mock when no API key, else live
+
+
+def _rsi_use_mock(body: RunBody) -> bool:
+    if body.use_mock is not None:
+        return body.use_mock
+    return llm.MOCK
 
 
 @app.get("/health")
 def health():
-    return {"mock": llm.MOCK, "model": llm.MODEL}
+    return {"mock": llm.MOCK, "model": llm.MODEL, "can_live": bool(llm.API_KEY)}
 
 
 @app.post("/resume", response_model=Candidate)
@@ -91,7 +98,13 @@ def _job_or_404(job_id: str) -> Job:
 
 @app.post("/run", response_model=Run)
 def run(body: RunBody):
-    return run_rsi(body.candidate, _job_or_404(body.job_id), PERSONAS, body.n)
+    return run_rsi(
+        body.candidate,
+        _job_or_404(body.job_id),
+        PERSONAS,
+        body.n,
+        use_mock=_rsi_use_mock(body),
+    )
 
 
 @app.post("/run/stream")
@@ -105,7 +118,14 @@ def run_stream(body: RunBody):
 
     def work() -> None:
         try:
-            finished = run_rsi(body.candidate, job, PERSONAS, body.n, on_progress)
+            finished = run_rsi(
+                body.candidate,
+                job,
+                PERSONAS,
+                body.n,
+                on_progress,
+                use_mock=_rsi_use_mock(body),
+            )
             events.put({"run": json.loads(finished.model_dump_json())})
         except Exception as exc:
             events.put({"error": str(exc)})

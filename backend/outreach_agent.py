@@ -3,7 +3,14 @@ from .llm import complete, parse_json
 from .schemas import Candidate, Job, Message, Persona
 
 
-def generate(prompt: str, candidate: Candidate, job: Job, persona: Persona) -> Message:
+def generate(
+    prompt: str,
+    candidate: Candidate,
+    job: Job,
+    persona: Persona,
+    *,
+    use_mock: bool | None = None,
+) -> Message:
     # Only name/role/company of the recipient: their priorities are what the evaluator scores against,
     # and the contact may be a held-out test persona.
     user = "\n".join([
@@ -15,7 +22,7 @@ def generate(prompt: str, candidate: Candidate, job: Job, persona: Persona) -> M
         "",
         f"RECIPIENT: {persona.name}, {persona.role} at {persona.company}",
     ])
-    raw = complete(prompt, user, "generate")
+    raw = complete(prompt, user, "generate", use_mock=use_mock)
     out = parse_json(raw)
     text = str(out.get("text") or raw).strip()
     valid = {l.id for l in candidate.lines}

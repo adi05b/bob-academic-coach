@@ -12,7 +12,14 @@ def _clamp(v, hi: int) -> int:
         return 0
 
 
-def evaluate(persona: Persona, message: Message, job: Job, candidate: Candidate) -> Evaluation:
+def evaluate(
+    persona: Persona,
+    message: Message,
+    job: Job,
+    candidate: Candidate,
+    *,
+    use_mock: bool | None = None,
+) -> Evaluation:
     # `candidate` is unused on purpose: a real recipient never sees the resume, only the message.
     system = f"""You are {persona.name}. Your role: {persona.role} at {persona.company}.
 You care about: {"; ".join(persona.priorities)}.
@@ -23,7 +30,9 @@ Return JSON only:
  "quality": {{"relevance": 0-3, "specificity": 0-3, "concise": 0-2, "clear_ask": 0-2}},
  "reply": "<your reply in character, max 2 sentences; empty if no_response>",
  "critique": "<what would have made you respond better, 1-2 sentences>"}}"""
-    out = parse_json(complete(system, f"MESSAGE ({message.chars} chars):\n{message.text}", "evaluate"))
+    out = parse_json(
+        complete(system, f"MESSAGE ({message.chars} chars):\n{message.text}", "evaluate", use_mock=use_mock)
+    )
 
     outcome = out.get("outcome") if out.get("outcome") in OUTCOME_REWARD else "no_response"
     q = out.get("quality") if isinstance(out.get("quality"), dict) else {}

@@ -30,10 +30,17 @@ def score(evals: list[Evaluation], lint: Lint) -> float:
     return round(0.5 * mean(e.outcome_reward for e in evals) + 0.5 * mean(e.quality_score for e in evals), 3)
 
 
-def optimize(prompt: str, message: Message, evals: list[Evaluation], lint: Lint) -> str:
+def optimize(
+    prompt: str,
+    message: Message,
+    evals: list[Evaluation],
+    lint: Lint,
+    *,
+    use_mock: bool | None = None,
+) -> str:
     feedback = "\n".join(f"- {e.persona_id}: {e.outcome}, quality {e.quality_score:.1f}. {e.critique}" for e in evals)
     user = f"CURRENT PROMPT:\n{prompt}\n\nMESSAGE IT PRODUCED:\n{message.text}\n\nRECIPIENT FEEDBACK:\n{feedback}"
-    new = complete(OPTIMIZER_SYSTEM, user, "optimize").strip() or prompt
+    new = complete(OPTIMIZER_SYSTEM, user, "optimize", use_mock=use_mock).strip() or prompt
     kept = [l for l in prompt.splitlines() if l.startswith(LINT_RULE) and l not in new]
     if not lint.passed:
         kept.append(f"{LINT_RULE} {', '.join(lint.offending)}: not in the candidate's resume lines.")
@@ -46,12 +53,16 @@ def _evaluate_all(
     job: Job,
     candidate: Candidate,
     on_each: Callable[[Persona, int], None] | None = None,
+    *,
+    use_mock: bool | None = None,
 ) -> list[Evaluation]:
     if not personas:
         return []
     results: list[Evaluation | None] = [None] * len(personas)
     with ThreadPoolExecutor(max_workers=8) as pool:
-        futures = {pool.submit(evaluate, p, message, job, candidate): i for i, p in enumerate(personas)}
+        futures = {
+            pool.submit(evaluate, p, message, job, candidate, use_mock=use_mock): i for i, p in enumerate(personas)
+        }
         finished = 0
         for fut in as_completed(futures):
             i = futures[fut]
@@ -68,6 +79,8 @@ def run_rsi(
     personas: list[Persona],
     n: int = 4,
     on_progress: Callable[[str, int, int], None] | None = None,
+    *,
+    use_mock: bool | None = None,
 ) -> Run:
     train = [p for p in personas if p.split == "train"]
     test = [p for p in personas if p.split == "test"]
@@ -91,7 +104,7 @@ def run_rsi(
 
     for i in range(1, n + 1):
         announce(f"Writing outreach · iteration {i} of {n}")
-        message = generate(prompt, candidate, job, contact)
+        message = generate(prompt, candidate, job, contact, use_mock=use_mock)
         lint = lint_message(message.text, candidate, allow)
         tick(f"Draft ready · iteration {i} of {n}")
         announce(f"Asking {len(train)} train personas · iteration {i} of {n}")
@@ -99,11 +112,11 @@ def run_rsi(
         def on_train(persona: Persona, finished: int, iteration: int = i) -> None:
             tick(f"{persona.name} reviewed the note · {finished} of {len(train)} · iteration {iteration}")
 
-        evals = _evaluate_all(train, message, job, candidate, on_train)
+        evals = _evaluate_all(train, message, job, candidate, on_train, use_mock=use_mock)
         iterations.append(Iteration(n=i, prompt=prompt, message=message, lint=lint, evals=evals, score=score(evals, lint)))
         if i < n:
             announce(f"Rewriting the prompt after iteration {i}")
-            prompt = optimize(prompt, message, evals, lint)
+            prompt = optimize(prompt, message, evals, lint, use_mock=use_mock)
             tick(f"Prompt updated · iteration {i}")
 
     best = max(iterations, key=lambda it: it.score)
@@ -115,9 +128,9 @@ def run_rsi(
     def on_opt(persona: Persona, finished: int) -> None:
         tick(f"Held-out best message · {persona.name} · {finished} of {len(test)}")
 
-    baseline = _evaluate_all(test, iterations[0].message, job, candidate, on_base)
+    baseline = _evaluate_all(test, iterations[0].message, job, candidate, on_base, use_mock=use_mock)
     announce("Scoring the best message on held-out personas")
-    optimized = _evaluate_all(test, best.message, job, candidate, on_opt)
+    optimized = _evaluate_all(test, best.message, job, candidate, on_opt, use_mock=use_mock)
     run = Run(
         id=uuid.uuid4().hex[:12],
         candidate_id=candidate.id,
