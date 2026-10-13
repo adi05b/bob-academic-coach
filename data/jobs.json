@@ -1,0 +1,906 @@
+[
+  {
+    "id": "job_01",
+    "company": "Lumenstack",
+    "title": "Founding Engineer",
+    "reqs": [
+      {
+        "id": "J1",
+        "text": "Ship full-stack features end to end in TypeScript and Python"
+      },
+      {
+        "id": "J2",
+        "text": "Build and own backend APIs (FastAPI or similar)"
+      },
+      {
+        "id": "J3",
+        "text": "Design PostgreSQL schemas and write efficient queries"
+      },
+      {
+        "id": "J4",
+        "text": "Deploy and operate services on AWS with Docker"
+      },
+      {
+        "id": "J5",
+        "text": "Talk to early users and turn feedback into features weekly"
+      },
+      {
+        "id": "J6",
+        "text": "Comfortable with ambiguity and owning outcomes, not tickets"
+      },
+      {
+        "id": "J7",
+        "text": "Set up CI, monitoring, and on-call basics"
+      },
+      {
+        "id": "J8",
+        "text": "Build internal tools that speed up the team"
+      },
+      {
+        "id": "J9",
+        "text": "Bonus: startup, hackathon, or side project with real users"
+      }
+    ],
+    "contact_persona_id": "p_ceo_dana"
+  },
+  {
+    "id": "job_02",
+    "company": "Lumenstack",
+    "title": "Forward Deployed Engineer",
+    "reqs": [
+      {
+        "id": "J1",
+        "text": "Embed with customer teams to deploy our developer platform"
+      },
+      {
+        "id": "J2",
+        "text": "Write production Python and TypeScript integrations against customer APIs"
+      },
+      {
+        "id": "J3",
+        "text": "Debug customer data pipelines and infrastructure under time pressure"
+      },
+      {
+        "id": "J4",
+        "text": "Run technical demos and workshops for engineering audiences"
+      },
+      {
+        "id": "J5",
+        "text": "Turn field feedback into product requirements for the core team"
+      },
+      {
+        "id": "J6",
+        "text": "Write clear integration guides and runbooks"
+      },
+      {
+        "id": "J7",
+        "text": "Comfortable with SQL and reading unfamiliar codebases"
+      },
+      {
+        "id": "J8",
+        "text": "Travel up to 30% to customer sites"
+      },
+      {
+        "id": "J9",
+        "text": "Experience with Docker and cloud deployment (AWS or GCP)"
+      },
+      {
+        "id": "J10",
+        "text": "Strong written and verbal communication"
+      }
+    ],
+    "contact_persona_id": "p_ceo_dana"
+  },
+  {
+    "id": "job_03",
+    "company": "Quarry Labs",
+    "title": "Founding ML Engineer",
+    "reqs": [
+      {
+        "id": "J1",
+        "text": "Train and fine-tune models in PyTorch"
+      },
+      {
+        "id": "J2",
+        "text": "Build evaluation harnesses and regression tests for model quality"
+      },
+      {
+        "id": "J3",
+        "text": "Ship retrieval and ranking components to production"
+      },
+      {
+        "id": "J4",
+        "text": "Own data pipelines for training and evaluation sets"
+      },
+      {
+        "id": "J5",
+        "text": "Measure and improve latency of model-serving endpoints"
+      },
+      {
+        "id": "J6",
+        "text": "Read papers and turn ideas into experiments within days"
+      },
+      {
+        "id": "J7",
+        "text": "Write production Python with tests"
+      },
+      {
+        "id": "J8",
+        "text": "Work directly with customers to define success metrics"
+      },
+      {
+        "id": "J9",
+        "text": "Experience with GPU training and CUDA basics"
+      },
+      {
+        "id": "J10",
+        "text": "Bonus: publications or open-source ML work"
+      }
+    ],
+    "contact_persona_id": "p_ceo_rafael"
+  },
+  {
+    "id": "job_04",
+    "company": "Quarry Labs",
+    "title": "AI Solutions Engineer",
+    "reqs": [
+      {
+        "id": "J1",
+        "text": "Build LLM-powered prototypes (RAG, agents) for prospects in days"
+      },
+      {
+        "id": "J2",
+        "text": "Integrate with customer systems through APIs and SDKs"
+      },
+      {
+        "id": "J3",
+        "text": "Present solutions to technical and executive stakeholders"
+      },
+      {
+        "id": "J4",
+        "text": "Write Python and TypeScript for demos and reference implementations"
+      },
+      {
+        "id": "J5",
+        "text": "Design evaluation criteria for customer use cases"
+      },
+      {
+        "id": "J6",
+        "text": "Experience with LangChain, LlamaIndex, or similar frameworks"
+      },
+      {
+        "id": "J7",
+        "text": "Translate customer requirements into product feedback"
+      },
+      {
+        "id": "J8",
+        "text": "Deploy demos with Docker on cloud platforms"
+      },
+      {
+        "id": "J9",
+        "text": "Clear technical writing"
+      }
+    ],
+    "contact_persona_id": "p_ceo_rafael"
+  },
+  {
+    "id": "job_05",
+    "company": "Saltmarsh AI",
+    "title": "Founding Engineer, Full-Stack",
+    "reqs": [
+      {
+        "id": "J1",
+        "text": "Build web product features in React and Next.js"
+      },
+      {
+        "id": "J2",
+        "text": "Own backend services in Python (FastAPI) or Node.js"
+      },
+      {
+        "id": "J3",
+        "text": "Model data in PostgreSQL"
+      },
+      {
+        "id": "J4",
+        "text": "Integrate LLM APIs into user-facing workflows"
+      },
+      {
+        "id": "J5",
+        "text": "Instrument product analytics and act on what users do"
+      },
+      {
+        "id": "J6",
+        "text": "Ship weekly to production with high ownership"
+      },
+      {
+        "id": "J7",
+        "text": "Set up deployment on AWS or GCP"
+      },
+      {
+        "id": "J8",
+        "text": "Talk to customers directly"
+      },
+      {
+        "id": "J9",
+        "text": "Bonus: shipped a side project people use"
+      }
+    ],
+    "contact_persona_id": "p_ceo_helen"
+  },
+  {
+    "id": "job_06",
+    "company": "Saltmarsh AI",
+    "title": "Forward Deployed Engineer, AI",
+    "reqs": [
+      {
+        "id": "J1",
+        "text": "Deploy LLM applications inside customer environments"
+      },
+      {
+        "id": "J2",
+        "text": "Build retrieval pipelines over customer documents"
+      },
+      {
+        "id": "J3",
+        "text": "Write Python services and data connectors"
+      },
+      {
+        "id": "J4",
+        "text": "Debug model quality issues with customers and design evals"
+      },
+      {
+        "id": "J5",
+        "text": "Lead technical onboarding calls"
+      },
+      {
+        "id": "J6",
+        "text": "Document integrations and train customer teams"
+      },
+      {
+        "id": "J7",
+        "text": "Work with Docker, Kubernetes, and cloud IAM"
+      },
+      {
+        "id": "J8",
+        "text": "Prioritize across multiple customer deployments"
+      },
+      {
+        "id": "J9",
+        "text": "Strong communication with non-technical users"
+      },
+      {
+        "id": "J10",
+        "text": "Willingness to travel"
+      }
+    ],
+    "contact_persona_id": "p_ceo_helen"
+  },
+  {
+    "id": "job_07",
+    "company": "Copperline Freight",
+    "title": "New Grad Software Engineer, Backend",
+    "reqs": [
+      {
+        "id": "J1",
+        "text": "B.S. in Computer Science or related field by mid-2026"
+      },
+      {
+        "id": "J2",
+        "text": "Proficiency in Python, Java, or Go"
+      },
+      {
+        "id": "J3",
+        "text": "Experience building REST APIs"
+      },
+      {
+        "id": "J4",
+        "text": "Familiarity with relational databases and SQL"
+      },
+      {
+        "id": "J5",
+        "text": "Understanding of data structures and algorithms"
+      },
+      {
+        "id": "J6",
+        "text": "Internship or project experience shipping production code"
+      },
+      {
+        "id": "J7",
+        "text": "Comfortable with Git, code review, and testing"
+      },
+      {
+        "id": "J8",
+        "text": "Interest in logistics and real-time systems"
+      },
+      {
+        "id": "J9",
+        "text": "Strong collaboration skills"
+      }
+    ],
+    "contact_persona_id": "p_rec_jasmine"
+  },
+  {
+    "id": "job_08",
+    "company": "Copperline Freight",
+    "title": "Data Engineer, New Grad",
+    "reqs": [
+      {
+        "id": "J1",
+        "text": "B.S. in Computer Science, Data Science, or related field"
+      },
+      {
+        "id": "J2",
+        "text": "Strong SQL skills"
+      },
+      {
+        "id": "J3",
+        "text": "Build batch pipelines with Airflow or similar orchestrators"
+      },
+      {
+        "id": "J4",
+        "text": "Experience with Spark or distributed data processing"
+      },
+      {
+        "id": "J5",
+        "text": "Data modeling for analytics (dbt a plus)"
+      },
+      {
+        "id": "J6",
+        "text": "Python for data transformation"
+      },
+      {
+        "id": "J7",
+        "text": "Monitor data quality and pipeline failures"
+      },
+      {
+        "id": "J8",
+        "text": "Familiarity with a cloud warehouse such as Snowflake or BigQuery"
+      },
+      {
+        "id": "J9",
+        "text": "Kafka or streaming experience is a plus"
+      },
+      {
+        "id": "J10",
+        "text": "Clear communication with analysts"
+      }
+    ],
+    "contact_persona_id": "p_rec_jasmine"
+  },
+  {
+    "id": "job_09",
+    "company": "Copperline Freight",
+    "title": "New Grad Software Engineer, Platform",
+    "reqs": [
+      {
+        "id": "J1",
+        "text": "B.S. in Computer Science or equivalent"
+      },
+      {
+        "id": "J2",
+        "text": "Experience with Docker and containerized services"
+      },
+      {
+        "id": "J3",
+        "text": "Familiarity with Kubernetes or another orchestrator"
+      },
+      {
+        "id": "J4",
+        "text": "Scripting in Python or Bash"
+      },
+      {
+        "id": "J5",
+        "text": "Understanding of networking and Linux fundamentals"
+      },
+      {
+        "id": "J6",
+        "text": "Interest in CI/CD, observability, and reliability"
+      },
+      {
+        "id": "J7",
+        "text": "Experience with a cloud provider (AWS preferred)"
+      },
+      {
+        "id": "J8",
+        "text": "On-call readiness after onboarding"
+      }
+    ],
+    "contact_persona_id": "p_rec_jasmine"
+  },
+  {
+    "id": "job_10",
+    "company": "Fernhill Health",
+    "title": "New Grad Software Engineer",
+    "reqs": [
+      {
+        "id": "J1",
+        "text": "B.S. in Computer Science by summer 2026"
+      },
+      {
+        "id": "J2",
+        "text": "Build full-stack features with React and TypeScript"
+      },
+      {
+        "id": "J3",
+        "text": "Backend services in Python or Java"
+      },
+      {
+        "id": "J4",
+        "text": "Work with PostgreSQL and data privacy requirements"
+      },
+      {
+        "id": "J5",
+        "text": "Write tests and participate in code review"
+      },
+      {
+        "id": "J6",
+        "text": "Internship or substantial project experience"
+      },
+      {
+        "id": "J7",
+        "text": "Interest in healthcare and patient-facing products"
+      },
+      {
+        "id": "J8",
+        "text": "Clear written communication"
+      },
+      {
+        "id": "J9",
+        "text": "Teaching, mentoring, or tutoring experience is a plus"
+      }
+    ],
+    "contact_persona_id": "p_rec_tom"
+  },
+  {
+    "id": "job_11",
+    "company": "Fernhill Health",
+    "title": "ML Engineer, New Grad",
+    "reqs": [
+      {
+        "id": "J1",
+        "text": "B.S. or M.S. in CS, statistics, or related field"
+      },
+      {
+        "id": "J2",
+        "text": "Train and evaluate models in PyTorch or TensorFlow"
+      },
+      {
+        "id": "J3",
+        "text": "Build reproducible training and evaluation pipelines"
+      },
+      {
+        "id": "J4",
+        "text": "Strong Python and SQL"
+      },
+      {
+        "id": "J5",
+        "text": "Understand metrics like precision, recall, and calibration"
+      },
+      {
+        "id": "J6",
+        "text": "Experience with NLP or retrieval models"
+      },
+      {
+        "id": "J7",
+        "text": "Deploy models behind APIs"
+      },
+      {
+        "id": "J8",
+        "text": "Communicate results to clinicians and product managers"
+      },
+      {
+        "id": "J9",
+        "text": "Research experience or publications a plus"
+      },
+      {
+        "id": "J10",
+        "text": "Care about model fairness and safety"
+      }
+    ],
+    "contact_persona_id": "p_rec_tom"
+  },
+  {
+    "id": "job_12",
+    "company": "Ledgerwise",
+    "title": "New Grad Software Engineer, Payments",
+    "reqs": [
+      {
+        "id": "J1",
+        "text": "B.S. in Computer Science or related field"
+      },
+      {
+        "id": "J2",
+        "text": "Proficiency in Java, Kotlin, or Python"
+      },
+      {
+        "id": "J3",
+        "text": "Build reliable, idempotent APIs"
+      },
+      {
+        "id": "J4",
+        "text": "Relational databases and transactions (PostgreSQL)"
+      },
+      {
+        "id": "J5",
+        "text": "Testing discipline and code review"
+      },
+      {
+        "id": "J6",
+        "text": "Interest in fintech and correctness"
+      },
+      {
+        "id": "J7",
+        "text": "Internship experience shipping backend features"
+      },
+      {
+        "id": "J8",
+        "text": "Familiarity with message queues (Kafka or RabbitMQ)"
+      },
+      {
+        "id": "J9",
+        "text": "Strong attention to detail"
+      }
+    ],
+    "contact_persona_id": "p_rec_aisha"
+  },
+  {
+    "id": "job_13",
+    "company": "Ledgerwise",
+    "title": "Data Engineer",
+    "reqs": [
+      {
+        "id": "J1",
+        "text": "0-2 years of experience in data engineering"
+      },
+      {
+        "id": "J2",
+        "text": "Strong SQL and Python"
+      },
+      {
+        "id": "J3",
+        "text": "Build and maintain Airflow DAGs"
+      },
+      {
+        "id": "J4",
+        "text": "Spark or distributed processing experience"
+      },
+      {
+        "id": "J5",
+        "text": "Data quality testing and monitoring"
+      },
+      {
+        "id": "J6",
+        "text": "Snowflake or BigQuery experience"
+      },
+      {
+        "id": "J7",
+        "text": "Data modeling with dbt"
+      },
+      {
+        "id": "J8",
+        "text": "Experience supporting finance or analytics stakeholders"
+      },
+      {
+        "id": "J9",
+        "text": "Documentation habits"
+      }
+    ],
+    "contact_persona_id": "p_rec_aisha"
+  },
+  {
+    "id": "job_14",
+    "company": "Kiln Robotics",
+    "title": "ML Engineer, Perception",
+    "reqs": [
+      {
+        "id": "J1",
+        "text": "Train computer vision models in PyTorch"
+      },
+      {
+        "id": "J2",
+        "text": "Build datasets and labeling quality checks"
+      },
+      {
+        "id": "J3",
+        "text": "Optimize inference latency (ONNX, TensorRT, or similar)"
+      },
+      {
+        "id": "J4",
+        "text": "Evaluate models with clear metrics like mAP"
+      },
+      {
+        "id": "J5",
+        "text": "Strong Python; C++ is a plus"
+      },
+      {
+        "id": "J6",
+        "text": "Experience with GPU training"
+      },
+      {
+        "id": "J7",
+        "text": "Debug model failures on real-world data"
+      },
+      {
+        "id": "J8",
+        "text": "Deploy models to edge or cloud services"
+      },
+      {
+        "id": "J9",
+        "text": "Read and implement research papers"
+      },
+      {
+        "id": "J10",
+        "text": "Work closely with hardware engineers"
+      }
+    ],
+    "contact_persona_id": "p_eng_kenji"
+  },
+  {
+    "id": "job_15",
+    "company": "Kiln Robotics",
+    "title": "New Grad Software Engineer, Infrastructure",
+    "reqs": [
+      {
+        "id": "J1",
+        "text": "B.S. in Computer Science or related field"
+      },
+      {
+        "id": "J2",
+        "text": "Linux and networking fundamentals"
+      },
+      {
+        "id": "J3",
+        "text": "Python or Go for tooling and services"
+      },
+      {
+        "id": "J4",
+        "text": "Docker and Kubernetes"
+      },
+      {
+        "id": "J5",
+        "text": "Monitoring with Prometheus and Grafana"
+      },
+      {
+        "id": "J6",
+        "text": "CI pipelines and build tooling"
+      },
+      {
+        "id": "J7",
+        "text": "Debugging distributed systems"
+      },
+      {
+        "id": "J8",
+        "text": "Interest in robotics fleets"
+      }
+    ],
+    "contact_persona_id": "p_eng_kenji"
+  },
+  {
+    "id": "job_16",
+    "company": "Driftwood Data",
+    "title": "Data Engineer",
+    "reqs": [
+      {
+        "id": "J1",
+        "text": "Build streaming pipelines with Kafka"
+      },
+      {
+        "id": "J2",
+        "text": "Batch processing with Spark"
+      },
+      {
+        "id": "J3",
+        "text": "Orchestrate workflows in Airflow"
+      },
+      {
+        "id": "J4",
+        "text": "Strong SQL and data modeling"
+      },
+      {
+        "id": "J5",
+        "text": "Python for ETL and tooling"
+      },
+      {
+        "id": "J6",
+        "text": "Data quality tests and alerting"
+      },
+      {
+        "id": "J7",
+        "text": "Experience with Redis or other low-latency stores"
+      },
+      {
+        "id": "J8",
+        "text": "Cloud data platforms (GCP or AWS)"
+      },
+      {
+        "id": "J9",
+        "text": "Write design docs for data systems"
+      },
+      {
+        "id": "J10",
+        "text": "Open-source contributions a plus"
+      }
+    ],
+    "contact_persona_id": "p_eng_priya"
+  },
+  {
+    "id": "job_17",
+    "company": "Driftwood Data",
+    "title": "AI Solutions Engineer",
+    "reqs": [
+      {
+        "id": "J1",
+        "text": "Build customer-facing demos of our data platform with LLM features"
+      },
+      {
+        "id": "J2",
+        "text": "Python and SQL fluency"
+      },
+      {
+        "id": "J3",
+        "text": "Integrate with customer data warehouses"
+      },
+      {
+        "id": "J4",
+        "text": "Lead technical discovery calls"
+      },
+      {
+        "id": "J5",
+        "text": "Write reference architectures and guides"
+      },
+      {
+        "id": "J6",
+        "text": "Prototype RAG and agent workflows"
+      },
+      {
+        "id": "J7",
+        "text": "Debug customer issues end to end"
+      },
+      {
+        "id": "J8",
+        "text": "Docker and cloud deployment"
+      },
+      {
+        "id": "J9",
+        "text": "Excellent communication"
+      }
+    ],
+    "contact_persona_id": "p_eng_priya"
+  },
+  {
+    "id": "job_18",
+    "company": "Orrery Search",
+    "title": "ML Engineer, Ranking",
+    "reqs": [
+      {
+        "id": "J1",
+        "text": "Train retrieval and ranking models in PyTorch"
+      },
+      {
+        "id": "J2",
+        "text": "Build offline evaluation with metrics like recall@k and NDCG"
+      },
+      {
+        "id": "J3",
+        "text": "Run online experiments and analyze results"
+      },
+      {
+        "id": "J4",
+        "text": "Feature pipelines in Python and SQL"
+      },
+      {
+        "id": "J5",
+        "text": "Optimize model-serving latency"
+      },
+      {
+        "id": "J6",
+        "text": "Experience with embeddings and vector search"
+      },
+      {
+        "id": "J7",
+        "text": "Read papers and reproduce results"
+      },
+      {
+        "id": "J8",
+        "text": "Production Python with tests"
+      },
+      {
+        "id": "J9",
+        "text": "Debug data and label quality issues"
+      },
+      {
+        "id": "J10",
+        "text": "Publications or research experience a plus"
+      }
+    ],
+    "contact_persona_id": "p_eng_marcus"
+  },
+  {
+    "id": "job_19",
+    "company": "Orrery Search",
+    "title": "Forward Deployed Engineer",
+    "reqs": [
+      {
+        "id": "J1",
+        "text": "Deploy our search platform for enterprise customers"
+      },
+      {
+        "id": "J2",
+        "text": "Build connectors to customer data sources in Python"
+      },
+      {
+        "id": "J3",
+        "text": "Tune relevance for customer use cases"
+      },
+      {
+        "id": "J4",
+        "text": "Run onboarding sessions with customer engineers"
+      },
+      {
+        "id": "J5",
+        "text": "Debug production issues across customer infrastructure"
+      },
+      {
+        "id": "J6",
+        "text": "Write integration documentation"
+      },
+      {
+        "id": "J7",
+        "text": "Docker and cloud experience"
+      },
+      {
+        "id": "J8",
+        "text": "SQL fluency"
+      },
+      {
+        "id": "J9",
+        "text": "Comfortable owning customer relationships"
+      }
+    ],
+    "contact_persona_id": "p_eng_marcus"
+  },
+  {
+    "id": "job_20",
+    "company": "Orrery Search",
+    "title": "AI Solutions Engineer",
+    "reqs": [
+      {
+        "id": "J1",
+        "text": "Build search and RAG prototypes for prospects"
+      },
+      {
+        "id": "J2",
+        "text": "Strong Python; TypeScript a plus"
+      },
+      {
+        "id": "J3",
+        "text": "Present technical solutions to customer teams"
+      },
+      {
+        "id": "J4",
+        "text": "Design evaluations for search quality"
+      },
+      {
+        "id": "J5",
+        "text": "Experience with LangChain or similar frameworks"
+      },
+      {
+        "id": "J6",
+        "text": "Integrate with customer APIs"
+      },
+      {
+        "id": "J7",
+        "text": "Gather requirements and feed them to product"
+      },
+      {
+        "id": "J8",
+        "text": "Deploy demos on GCP or AWS"
+      },
+      {
+        "id": "J9",
+        "text": "Clear written communication"
+      }
+    ],
+    "contact_persona_id": "p_eng_marcus"
+  }
+]

@@ -1,0 +1,155 @@
+[
+  {
+    "id": "p_ceo_dana",
+    "role": "CEO",
+    "name": "Dana Whitfield",
+    "company": "Lumenstack",
+    "priorities": [
+      "what you would ship for the business in your first 90 days",
+      "ownership and speed",
+      "evidence you built something people used"
+    ],
+    "pet_peeves": [
+      "generic flattery",
+      "asking 'are you hiring?'",
+      "long messages with no point"
+    ],
+    "split": "train"
+  },
+  {
+    "id": "p_ceo_rafael",
+    "role": "CEO",
+    "name": "Rafael Ortiz",
+    "company": "Quarry Labs",
+    "priorities": [
+      "understanding of our customers' problem",
+      "shipping end to end without hand-holding",
+      "a concrete idea for the product"
+    ],
+    "pet_peeves": [
+      "buzzwords",
+      "copy-pasted messages",
+      "resume summaries with no ask"
+    ],
+    "split": "train"
+  },
+  {
+    "id": "p_ceo_helen",
+    "role": "CEO",
+    "name": "Helen Cho",
+    "company": "Saltmarsh AI",
+    "priorities": [
+      "impact on revenue or customers",
+      "bias to action",
+      "clarity about why this company"
+    ],
+    "pet_peeves": [
+      "vague passion statements",
+      "claims that can't be checked",
+      "a 'quick chat' request with no reason"
+    ],
+    "split": "test"
+  },
+  {
+    "id": "p_rec_jasmine",
+    "role": "Recruiter",
+    "name": "Jasmine Patel",
+    "company": "Copperline Freight",
+    "priorities": [
+      "clear fit to the posted requirements",
+      "graduation date and availability",
+      "easy-to-scan messages"
+    ],
+    "pet_peeves": [
+      "no mention of which role",
+      "walls of text",
+      "inflated titles"
+    ],
+    "split": "train"
+  },
+  {
+    "id": "p_rec_tom",
+    "role": "Recruiter",
+    "name": "Tom Becker",
+    "company": "Fernhill Health",
+    "priorities": [
+      "which role and why",
+      "evidence for the must-have requirements",
+      "a specific next step"
+    ],
+    "pet_peeves": [
+      "messages meant for another company",
+      "overclaiming skills",
+      "no question or ask"
+    ],
+    "split": "train"
+  },
+  {
+    "id": "p_rec_aisha",
+    "role": "Recruiter",
+    "name": "Aisha Rahman",
+    "company": "Ledgerwise",
+    "priorities": [
+      "match to the req's must-haves",
+      "concise, professional tone",
+      "timeline and availability"
+    ],
+    "pet_peeves": [
+      "generic templates",
+      "typos",
+      "asking for a referral before any context"
+    ],
+    "split": "test"
+  },
+  {
+    "id": "p_eng_kenji",
+    "role": "Engineer",
+    "name": "Kenji Watanabe",
+    "company": "Kiln Robotics",
+    "priorities": [
+      "technical specifics: what you built and how",
+      "real numbers you measured",
+      "curiosity about our stack"
+    ],
+    "pet_peeves": [
+      "sales pitches",
+      "listing every buzzword",
+      "asking for a referral in the first message"
+    ],
+    "split": "train"
+  },
+  {
+    "id": "p_eng_priya",
+    "role": "Engineer",
+    "name": "Priya Sundaram",
+    "company": "Driftwood Data",
+    "priorities": [
+      "concrete systems work",
+      "honest scope of your role",
+      "a good technical question"
+    ],
+    "pet_peeves": [
+      "fluff",
+      "'10x engineer' language",
+      "messages that could be sent to anyone"
+    ],
+    "split": "train"
+  },
+  {
+    "id": "p_eng_marcus",
+    "role": "Engineer",
+    "name": "Marcus Lee",
+    "company": "Orrery Search",
+    "priorities": [
+      "depth on one project over breadth",
+      "evidence of debugging and measurement",
+      "respect for my time"
+    ],
+    "pet_peeves": [
+      "self-promotion with no detail",
+      "made-up metrics",
+      "long asks"
+    ],
+    "split": "test"
+  }
+]

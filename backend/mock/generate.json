@@ -1,0 +1,46 @@
+[
+  {
+    "when": [],
+    "response": {
+      "text": "Hello, I am a passionate new grad with strong skills in Kafka and Kubernetes and a proven track record of 10x impact. I would love to connect and learn about opportunities at your company. Please let me know if you are hiring.",
+      "citations": []
+    }
+  },
+  {
+    "when": [
+      "Open with one concrete project"
+    ],
+    "response": {
+      "text": "Hi — I'm a new grad who built a FastAPI service at Harborlight Logistics that cut lookup latency from 900 ms to 120 ms. I'd love to connect and hear how your team ships.",
+      "citations": [
+        "R2"
+      ]
+    }
+  },
+  {
+    "when": [
+      "Name the specific requirement"
+    ],
+    "response": {
+      "text": "Hi — your role asks for production Python services. At Harborlight Logistics I built a FastAPI service that cut lookup latency from 900 ms to 120 ms, and moved nightly jobs to Airflow (failed runs down 60%). Would love to connect.",
+      "citations": [
+        "R2",
+        "R3",
+        "R12"
+      ]
+    }
+  },
+  {
+    "when": [
+      "End with a single low-effort ask"
+    ],
+    "response": {
+      "text": "Hi — your role asks for production Python services. At Harborlight Logistics I cut a FastAPI lookup from 900 ms to 120 ms and moved nightly jobs to Airflow (failed runs down 60%). Open to a short call next week about what new grads ship first?",
+      "citations": [
+        "R2",
+        "R3",
+        "R12"
+      ]
+    }
+  }
+]
