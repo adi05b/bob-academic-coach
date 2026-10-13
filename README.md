@@ -7,8 +7,9 @@ A self-improving outreach agent that can't learn to lie.
 | Name | GitHub |
 |---|---|
 | Aditi Bombe | adi05b |
-| TBD | yjoechuen |
-| TBD | shalondam7-ctrl |
+| George Yu | yjoechuen |
+| Paul Jiang | Bingxi-Jiang |
+| Shalonda Mitchell | shalondam7-ctrl |
 
 ## Summary
 
