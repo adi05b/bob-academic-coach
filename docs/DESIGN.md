@@ -29,13 +29,16 @@ All shapes live in `backend/schemas.py` (mirrored in `frontend/lib/types.ts`). T
 
 When `OPENROUTER_API_KEY` is empty, `llm.complete` serves `backend/mock/<skill_tag>.json`. Each fixture is a list of `{when: [substrings], response}`, and the last case whose substrings all appear in the prompt wins. That is how the four prompt versions map to four messages and to rising persona reactions. To add a case, append to the list.
 
-## Who works where (independent lanes)
+## Who works where (Agents A–D, per ROLE_SEPARATION.md)
 
-| Lane | Files | Done when |
+| Agent | Owns | Main handoff |
 |---|---|---|
-| Matching | `backend/job_matcher.py`, `backend/resume_parser.py` | better ranking than stem overlap on the 3 sample resumes |
-| Generator + reward model | `backend/outreach_agent.py`, `backend/persona_evaluator.py` | live runs return valid JSON every time; persona reactions differ by role |
-| Optimizer + UI | `backend/rsi_optimizer.py`, `frontend/app/page.tsx` | live run shows a rise on train and a held-out gain; dashboard tells the story |
+| A: Web experience & demo | `frontend/`, deployment (Vercel), `README.md` | one UI flow over everyone's real outputs |
+| B: Synthetic data | `data/` (jobs, personas, resumes, train/test splits) | structured test data for C and D |
+| C: Resume, matching & outreach | `backend/resume_parser.py`, `backend/job_matcher.py`, `backend/outreach_agent.py`, `data/prompts/` | candidate profile, ranked jobs, a reusable `generate()` |
+| D: Persona simulation & RSI | `backend/persona_evaluator.py`, `backend/rsi_optimizer.py`, `backend/runs/` | the `Run` trace that A renders |
+
+`backend/schemas.py` and `frontend/lib/types.ts` are the shared contract: they change together, in one PR.
 
 ## What it will not do
 

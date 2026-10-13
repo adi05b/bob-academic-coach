@@ -100,6 +100,8 @@ export default function Home() {
 
   const jobById = Object.fromEntries(jobs.map((j) => [j.id, j]));
   const personaById = Object.fromEntries(personas.map((p) => [p.id, p]));
+  const contactOf = (id: string): Persona | undefined => personaById[jobById[id]?.contact_persona_id];
+  const contact = contactOf(jobId);
 
   return (
     <main className="mx-auto w-full max-w-6xl px-4 py-8 space-y-6">
@@ -128,9 +130,10 @@ export default function Home() {
         />
         <div className="flex flex-wrap items-center gap-2">
           <input type="file" accept=".pdf,.txt" className="text-sm" onChange={(e) => setFile(e.target.files?.[0] ?? null)} />
-          <input
-            className="rounded-lg border border-black/15 dark:border-white/20 bg-transparent px-2 py-2 text-sm"
-            placeholder="Target role, e.g. backend"
+          <textarea
+            rows={2}
+            className="flex-1 min-w-64 rounded-lg border border-black/15 dark:border-white/20 bg-transparent px-2 py-1 text-sm"
+            placeholder="Describe the job you want (role, stack, company type)"
             value={targetRole}
             onChange={(e) => setTargetRole(e.target.value)}
           />
@@ -151,6 +154,7 @@ export default function Home() {
           <ul className="max-h-72 overflow-y-auto divide-y divide-black/10 dark:divide-white/10">
             {matches.map((m) => {
               const job = jobById[m.job_id];
+              const c = contactOf(m.job_id);
               const count = (s: string) => m.rows.filter((r) => r.status === s).length;
               return (
                 <li key={m.job_id}>
@@ -161,6 +165,7 @@ export default function Home() {
                     <span className="w-10 text-right font-mono text-sm">{m.score}</span>
                     <span className="flex-1 text-sm">
                       {job?.title} <span className="text-neutral-500">· {job?.company}</span>
+                      {c && <span className="block text-xs text-neutral-500">Contact: {c.name}, {c.role}</span>}
                     </span>
                     <span className="text-xs text-emerald-600">{count("Covered")} covered</span>
                     <span className="text-xs text-red-500">{count("Gap")} gap</span>
@@ -178,6 +183,7 @@ export default function Home() {
           <h2 className="font-semibold">3. Optimize outreach</h2>
           <span className="text-sm text-neutral-500">
             {jobById[jobId]?.title} · {jobById[jobId]?.company}
+            {contact && ` — to ${contact.name}, ${contact.role} at ${contact.company}`}
           </span>
           <label className="text-sm ml-auto">
             Iterations{" "}
@@ -272,6 +278,9 @@ function Dashboard({ run, personaById }: { run: Run; personaById: Record<string,
               iter {it.n} · {it.score.toFixed(2)}
             </button>
           ))}
+        </div>
+        <div className="mb-3">
+          <MessageCard title={`Iteration ${shown.n} message`} it={shown} />
         </div>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {shown.evals.map((e) => {
