@@ -1,10 +1,12 @@
+.env
+.env.local
+!.env.example
+__pycache__/
+*.egg-info/
+.pytest_cache/
 node_modules/
 .next/
 .venv/
-__pycache__/
-.pytest_cache/
-.env*
-!.env.example
 backend/runs/
 .vercel
 .DS_Store
